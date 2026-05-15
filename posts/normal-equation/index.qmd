@@ -47,7 +47,7 @@ import plotly.graph_objects as go
 
 fig = go.Figure()
 fig.add_trace(go.Scatter(x=X.flatten(), y=y, mode='markers', name='random data'))
-fig.add_trace(go.Scatter(x=X_line, y=y_line, mode='lines', name='best fiting line'))
+fig.add_trace(go.Scatter(x=X_line, y=y_line, mode='lines', name='best fitting line'))
 
 fig.update_layout(
     title=dict(text="Simple 2-D Linear Regression", x=0.5, xanchor="center"),
@@ -129,7 +129,7 @@ $$
 = \frac{1}{n} \|A x - y\|^2 = \frac{1}{n} (A x - y)^T (A x - y).
 $$
 
-Since $\frac{1}{n}$ is a positive constant, we can ignore it when trying to finding the miminum of or error term: the minimizing input of a function $f$ is the same as the minimizing input of $cf$ where $c$ is positive.
+Since $\frac{1}{n}$ is a positive constant, we can ignore it when trying to finding the minimum of or error term: the minimizing input of a function $f$ is the same as the minimizing input of $cf$ where $c$ is positive.
 
 So the parameters $x$ which minimize the MSE also minimize $f(x) = (A x - y)^T (A x - y)$.
 
@@ -137,7 +137,7 @@ $$
 f(x) = (A x - y)^T (A x - y) = x^T A^T A x - x^T A^T y - y^T A x + y^T y.
 $$
 
-The minimum of this function occurs when the gradient is zero (this is because MSE with linear regression is convex, a blog post about convexity and why it is important is soon to follow!). Taking the gradient of $f$ with respect to $x$ yeilds
+The minimum of this function occurs when the gradient is zero (this is because MSE with linear regression is convex, a blog post about convexity and why it is important is soon to follow!). Taking the gradient of $f$ with respect to $x$ yields
 
 $$
 \nabla f(x)
@@ -150,7 +150,7 @@ Notice that $y^T y$ is dropped since it doesn't depend on $x$: the derivatives o
 
 ### Evaluating Gradients
 
-Now we need to evaluate $\nabla \left(x^T A^T A x\right)$, $\nabla \left(x^T A^T y\right)$, and $\nabla \left(y^T A x\right)$. A lot of tedious math is to follow. If that doens't interest you, feel free to skip here [INSERT SKIP].
+Now we need to evaluate $\nabla \left(x^T A^T A x\right)$, $\nabla \left(x^T A^T y\right)$, and $\nabla \left(y^T A x\right)$. A lot of tedious math is to follow. If that doesn't interest you, feel free to skip here [INSERT SKIP].
 
 #### Evaluating $\nabla \left(x^T A^T A x\right)$
 
@@ -206,24 +206,116 @@ x_1 \sum_{i=1}^{d} S_{1i} x_i
 \end{aligned}
 $$
 
-Remembering that $S$ is symmetric means that $S_ki = S_ik$, so
+Remembering that $S$ is symmetric means that $S_{ki} = S_{ik}$, so
 
 $$
 \begin{aligned}
 \frac{\partial}{\partial x_k} x^T S x
-
 &= x_1 S_{1k}
 + x_2 S_{2k}
 + \cdots
 + \sum_{i=1}^{d} S_{ki} x_i
 + x_k S_{kk}
 + \cdots
-+ x_d S_{dk}.
-\end{aligned} \\
++ x_d S_{dk} \\
+&= S_{k1} x_1 + S_{k2} x_2 + \cdots + S_{kd} x_d + \sum_{i=1}^{d} S_{ki} x_i \\
+&= 2 \sum_{i=1}^{d} S_{ki} x_i \\
+&= 2 S_{k \cdot} \cdot x.
+\end{aligned}
+$$
 
-&= S_{k1} x_1 + [claude finish here] \\
+Since 
+$$
+\nabla g(x)
+=
+\begin{pmatrix}
+\frac{\partial}{\partial x_1} g(x) \\
+\frac{\partial}{\partial x_2} g(x) \\
+\vdots \\
+\frac{\partial}{\partial x_d} g(x)
+\end{pmatrix},
+$$
+we can write
+$$
+\begin{aligned}
+\nabla \left(x^T A^T A x\right) &= 
+\begin{pmatrix}
+2 S_{1 \cdot} \cdot x \\
+2 S_{2 \cdot} \cdot x \\
+\vdots \\
+2 S_{d \cdot} \cdot x
+\end{pmatrix} = 2 S x \\
+&= 2 A^T A x
+\end{aligned}
+$$
 
-&= 
+#### Evaluating $\nabla \left(x^T A^T y\right)$
 
+Since $A^T y$ is a vector, we can write $x^T A^T y$ as a dot product:
 
 $$
+x^T A^T y = \sum_{i=1}^{d} x_i (A^T y)_i.
+$$
+
+So when we take the partial derivative with respect to $x_k$, all terms vanish except the $k$-th one, so
+
+$$
+\frac{\partial}{\partial x_k} x^T A^T y = (A^T y)_k,
+$$
+
+which we stack into
+
+$$
+\nabla \left(x^T A^T y\right) = A^T y.
+$$
+
+#### Evaluating $\nabla \left(y^T A x\right)$
+
+Similar to what we did above, we can consider $\left(y^T A x\right)$ as a dot product between the row vector $y^T A$ and the column vector $x$. Doing this yeilds
+
+$$
+y^T A x = (y^T A) x = \sum_{i=1}^{d} (y^T A)_i \, x_i.
+$$
+
+And just like what happens above, the partial derivative with respect to $x_k$ causes all terms except the $k$-th to vanish, so
+
+$$
+\frac{\partial}{\partial x_k} y^T A x = (y^T A)_k,
+$$
+
+and we can stack these partials so that
+
+$$
+\nabla \left(y^T A x\right) =
+\begin{bmatrix}
+(y^T A)_1 \\
+(y^T A)_2 \\
+\vdots \\
+(y^T A)_d
+\end{bmatrix}
+= (y^T A)^T = A^T y.
+$$
+
+Notice that we have to transpose $(y^T A)$ since it is a row vector. 
+
+### Combining Evaluated Gradients
+Now that the algebra is over, we can combine the gradents we computed into
+
+$$
+\begin{aligned}
+\nabla f(x)
+&= \nabla \left(x^T A^T A x\right)
+- \nabla \left(x^T A^T y\right)
+- \nabla \left(y^T A x\right) \\
+&= 2 A^T A x - 2 A^T y
+\end{aligned}.
+$$
+
+We know $f(x)$ will be minimized when it's gradient is 0. So as promised,
+$$
+\nabla f(x) = 0 \implies A^T A x = A^T y.
+$$
+
+This is very nice, but this equation only helps us if we know that 
+
+
