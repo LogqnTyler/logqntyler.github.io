@@ -1,0 +1,22 @@
+---
+title: "About Me"
+image: logan_switzerland.jpeg
+about:
+  template: jolla
+  links:
+    - icon: linkedin
+      text: LinkedIn
+      href: https://https://www.linkedin.com/in/logan-tyler-foster/
+    - icon: github
+      text: Github
+      href: https://github.com/zup7mn
+
+---
+
+My name is Logan Foster, I am an Echols' Scholar and 3rd-year student of Mathematics at the University of Virginia (UVA). I also study Russian and will soon being doing research with [Dr. Hadi Daneshemand](https://hadidaneshmand.github.io/dhadi.html) into diffusion models and language transformers.
+
+I currently work as a Machine Learning Engineer at [True Path Vision](https://truepathvision.com/), where I build and deploy computer vision models to provide security and management services to hotels. I have built and trained state of the art computer vision models to detect guns and other waepons, and I am currently building methods to automate the generation and collection of additional training data. Among these methods include effecient and distributed web harvesters and automated blender-based 3D object rendering pipelines.
+
+I was one of six students to recieve the [2026 Distinguished Undergraduate Award](https://iwl.virginia.edu/distinguished-undergraduates) from the [Institute of World Languages](https://iwl.virginia.edu/) at UVA for my excelence in learning Russian. I am also an Echols' scholar at UVA, and honor awared to only the top five percent of students in the College of Arts and Sciences. I am also a two-time recipient of the Chick-Fil-A Remarkable Futures Scholarship.
+
+In my free time, I love to serve at my church, travel, hike the Alps, DJ, play nerdy board games, and spend time with friends.

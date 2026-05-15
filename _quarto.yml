@@ -1,0 +1,23 @@
+project:
+  type: website
+
+website:
+  description: "Logan Foster's Personal Page"
+  site-url: https://zup7mn.github.io # you must change this appropriately for RSS feeds to work properly
+  title: "Logan's Blog"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+      - icon: bluesky
+        href: https://bsky.app/
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+    css: styles.css
+
+
+

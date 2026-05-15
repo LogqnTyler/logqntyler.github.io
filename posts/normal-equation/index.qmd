@@ -1,0 +1,229 @@
+---
+title: "Understanding the Normal Equation"
+author: "Logan Foster"
+date: "2026-05-13"
+categories: [math]
+image: "image.jpg"
+format:
+    html:
+        code-fold: true
+        html-math-method: katex
+
+jupyter: data
+
+---
+
+# Understanding the Normal Equation
+
+Linear regression is one of the most fundamental models in machine learning. In fact, least squares linear regression, commonly called “ordinary least squares” or “OLS”, was first discovered by Isaac Newton over 250 years before the term “machine learning” was coined![^1]
+
+[^1]: See [Least squares: History](https://en.wikipedia.org/wiki/Least_squares#History) and [Machine learning: History](https://en.wikipedia.org/wiki/Machine_learning#History).
+
+## Linear Regression
+
+Linear regression works by fitting a high-dimensional “plane” to a dataset. This is easiest to visualize in the case where our features (inputs) are one-dimensional:
+
+
+```{python}
+from sklearn.datasets import make_regression
+import numpy as np
+
+X, y = make_regression(n_samples = 50, n_features= 1, n_informative=1, n_targets=1, bias=2, noise = 10, random_state=42)
+
+# Doing regression
+
+## add bias term
+X_b = np.hstack((np.ones(X.shape), X))
+## use the normal equation to find the best fit
+
+theta = np.linalg.solve((X_b.T @ X_b), (X_b.T @ y))
+
+X_line = np.linspace(X.min(), X.max(), 100)
+y_line = X_line * theta[1] + theta[0]
+
+
+## plot results
+import plotly.graph_objects as go
+
+fig = go.Figure()
+fig.add_trace(go.Scatter(x=X.flatten(), y=y, mode='markers', name='random data'))
+fig.add_trace(go.Scatter(x=X_line, y=y_line, mode='lines', name='best fiting line'))
+
+fig.update_layout(
+    title=dict(text="Simple 2-D Linear Regression", x=0.5, xanchor="center"),
+    yaxis=dict(showticklabels=False),
+    margin=dict(l=20, r=20)
+)
+fig.show()
+```
+
+We can also visualize regression in three dimensions (so, two dimensions for features, since the third is the value we are trying to predict).
+
+```{python}
+X, y = make_regression(n_samples = 100, n_features= 2, n_informative=2, n_targets=1, bias=2, noise = 30, random_state=42)
+
+# Doing regression
+
+## add bias term
+X_b = np.hstack((np.ones((X.shape[0], 1)), X))
+## use the normal equation to find the best fit
+
+theta = np.linalg.solve((X_b.T @ X_b), (X_b.T @ y))
+
+
+ax_1 = np.linspace(X[:, 0].min(), X[:, 0].max(), 100)
+ax_2 = np.linspace(X[:, 1].min(), X[:, 1].max(), 100)
+X_plane = np.array(np.meshgrid(ax_1, ax_2, indexing='xy'))
+
+y_plane = theta[0] + theta[1] * X_plane[0] + theta[2] * X_plane[1]
+
+
+## plot results
+fig = go.Figure()
+fig.add_trace(go.Scatter3d(x=X[:, 0], y=X[:, 1], z=y, mode='markers', name='random data',
+    marker=dict(size=5)))
+fig.add_trace(go.Surface(x=ax_1, y=ax_2, z=y_plane, opacity=0.5, showlegend=False, showscale=False))
+fig.update_layout(
+    title=dict(text="Simple 3-D Linear Regression", x=0.5, xanchor="center"),
+    margin=dict(t=40, b=40, l=0, r=0),
+    scene=dict(
+        zaxis=dict(showticklabels=False, title="", showline=False, zeroline=False),
+        camera=dict(
+            eye=dict(x=0.9, y=-2.0, z=1.4),
+            center=dict(x=0, y=0, z=-0.15)
+        )
+    )
+)
+fig.show()
+```
+
+In this example, we define the "line (or plane) of best fit" as the one which minimizes the mean of the squared distance between our prediction and the data at all points. This is called "mean squared error" or "MSE". MSE is calculated as
+$$
+\mathrm{MSE} = \frac{1}{n} \sum_{i = 1}^{n} (y_i - \hat{y}_i)^2,
+$$
+
+where $y_i$ is the true value of the $i$-th sample of our dataset, and $\hat{y}_i$ is our prediction of the true value using only the $i$-th set of features $x_i$.
+
+Usually, we find the parameters $x$ describing the line of best fit through some form of [gradient descent](https://en.wikipedia.org/wiki/Gradient_descent). But in cases where our dataset is small enough, we can use a closed form solution to find the optimal parameters. This closed form solution looks like solving the linear equation
+
+$$
+A^T A x = A^T y.
+$$
+
+This equation is called the normal equation, and the rest of this blog is devoted to understanding why it works!
+
+## The Normal Equation
+
+We can represent our plane of best fit as a linear equation:
+
+$$
+Ax = \hat{y},
+$$
+
+where $A$ is an $n$ by $d$ matrix ($n$ are the number of data points we have, $d$ represents the number of features our dataset has), $x$ is a vector representing our parameters, and $\hat{y}$ is our prediction. Our goal is to find the $x$ which minimizes the MSE between our predictions and our true labels. Lets rewrite MSE:
+
+
+$$
+\mathrm{MSE}
+= \frac{1}{n} \sum_{i = 1}^{n} (y_i - \hat{y}_i)^2
+= \frac{1}{n} \|A x - y\|^2 = \frac{1}{n} (A x - y)^T (A x - y).
+$$
+
+Since $\frac{1}{n}$ is a positive constant, we can ignore it when trying to finding the miminum of or error term: the minimizing input of a function $f$ is the same as the minimizing input of $cf$ where $c$ is positive.
+
+So the parameters $x$ which minimize the MSE also minimize $f(x) = (A x - y)^T (A x - y)$.
+
+$$
+f(x) = (A x - y)^T (A x - y) = x^T A^T A x - x^T A^T y - y^T A x + y^T y.
+$$
+
+The minimum of this function occurs when the gradient is zero (this is because MSE with linear regression is convex, a blog post about convexity and why it is important is soon to follow!). Taking the gradient of $f$ with respect to $x$ yeilds
+
+$$
+\nabla f(x)
+= \nabla \left(x^T A^T A x\right)
+- \nabla \left(x^T A^T y\right)
+- \nabla \left(y^T A x\right).
+$$
+
+Notice that $y^T y$ is dropped since it doesn't depend on $x$: the derivatives of constants are always 0.
+
+### Evaluating Gradients
+
+Now we need to evaluate $\nabla \left(x^T A^T A x\right)$, $\nabla \left(x^T A^T y\right)$, and $\nabla \left(y^T A x\right)$. A lot of tedious math is to follow. If that doens't interest you, feel free to skip here [INSERT SKIP].
+
+#### Evaluating $\nabla \left(x^T A^T A x\right)$
+
+Starting with $\nabla \left(x^T A^T A x\right)$. Let $S = A^T A$. Since $A$ is $n \times d$, $S$ is $d \times d$. $S$ is also symmetric, which will help us later:
+$$
+\begin{aligned}
+S_{ij} & = (A^T A)_{ij} = A^T_{i \cdot} \cdot A_{\cdot j} = \sum_{k = 1}^{n} (A^T)_{ik} A_{kj} = \sum_{k = 1}^{n} A_{ki} A_{kj} \\
+&= A_{\cdot i} \cdot A_{\cdot j} = A_{\cdot j} \cdot A_{\cdot i} \\
+&= \sum_{k = 1}^{n} A_{kj} A_{ki} = A^T_{j \cdot} \cdot A_{\cdot i} = (A^T A)_{ji} = S_{ji}.
+\end{aligned}
+$$
+
+So $x^T A^T A x = x^T S x$, which we can write as
+
+$$
+x^T S x
+=
+x^T
+\begin{bmatrix}
+\sum_{i = 1}^{d} S_{1i} x_i \\
+\sum_{i = 1}^{d} S_{2i} x_i \\
+\vdots \\
+\sum_{i = 1}^{d} S_{di} x_i
+\end{bmatrix}
+=
+x_1 \sum_{i = 1}^{d} S_{1i} x_i
++
+x_2 \sum_{i = 1}^{d} S_{2i} x_i
++
+\cdots
++
+x_d \sum_{i = 1}^{d} S_{di} x_i.
+$$
+
+Lets consider the partial derivative of the above with respect to $x_k$:
+$$
+\begin{aligned}
+\frac{\partial}{\partial x_k} x^T S x
+&= \frac{\partial}{\partial x_k}
+\left(
+x_1 \sum_{i=1}^{d} S_{1i} x_i
++ x_2 \sum_{i=1}^{d} S_{2i} x_i
++ \cdots
++ x_d \sum_{i=1}^{d} S_{di} x_i
+\right) \\
+&= x_1 S_{1k}
++ x_2 S_{2k}
++ \cdots
++ \sum_{i=1}^{d} S_{ki} x_i
++ x_k S_{kk}
++ \cdots
++ x_d S_{dk}.
+\end{aligned}
+$$
+
+Remembering that $S$ is symmetric means that $S_ki = S_ik$, so
+
+$$
+\begin{aligned}
+\frac{\partial}{\partial x_k} x^T S x
+
+&= x_1 S_{1k}
++ x_2 S_{2k}
++ \cdots
++ \sum_{i=1}^{d} S_{ki} x_i
++ x_k S_{kk}
++ \cdots
++ x_d S_{dk}.
+\end{aligned} \\
+
+&= S_{k1} x_1 + [claude finish here] \\
+
+&= 
+
+
+$$
