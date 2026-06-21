@@ -1,8 +1,8 @@
 ---
 title: "Understanding the Normal Equation"
 author: "Logan Foster"
-date: "2026-05-13"
-categories: [math]
+date: "2026-06-21"
+categories: [Math]
 image: "image.jpg"
 format:
     html:
@@ -380,7 +380,21 @@ Now applying [-@eq-step2] from step 2 to the above yields
 $$
 \col A^T = \col \left( A^T A \right)^T = \col A^T A.
 $$
+
 ### Conclusion
 Since $A^T y \in \col A^T$, we know that $A^T y \in \col A^T A$, which tells us that there must exist an parameter vector $x$ such that $A^TA x = A^T y$, and as we already demonstrated, such a solution is the minimizing solution to the MSE!
 
 This means that the optimal set of parameters for linear regression tasks under MSE has a closed form solution.
+
+#### But Why is it Called the Normal Equation?
+
+You may be left with a question: why do we call the "normal equation"? The answer is simple. It is because $Ax - y$ is normal to the column space of $A$.[^2] Here is the proof:
+
+[^2]: See [Normal Equation](https://mathworld.wolfram.com/NormalEquation.html).
+
+$$
+A^T A x = A^T y \implies A^T A x - A^T y = A^T \left( Ax - y \right)= \vec{0}.
+$$
+
+For any $w \in \col A, \exists z : w = Az$, so $$\langle w, Ax-y \rangle = w^T \left( Ax - y \right) = z^T A^T \left( Ax - y \right) = w^T \vec{0} = 0.$$
+Hence, $A^T x - y$ is normal to $\col A$.

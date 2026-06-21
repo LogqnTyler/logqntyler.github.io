@@ -9,9 +9,9 @@ website:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: bluesky
-        href: https://bsky.app/
+        href: https://github.com/zup7mn
+      - icon: linkedin
+        href: https://www.linkedin.com/in/logan-tyler-foster/
 format:
   html:
     theme:
