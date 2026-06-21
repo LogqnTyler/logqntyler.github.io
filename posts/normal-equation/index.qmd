@@ -12,7 +12,13 @@ format:
 jupyter: data
 
 ---
-
+::: {.hidden style="display: none;"}
+$$
+\gdef\col{\operatorname{Col}}
+\gdef\nul{\operatorname{Nul}}
+\gdef\rk{\operatorname{rk}}
+$$
+:::
 # Understanding the Normal Equation
 
 Linear regression is one of the most fundamental models in machine learning. In fact, least squares linear regression, commonly called “ordinary least squares” or “OLS”, was first discovered by Isaac Newton over 250 years before the term “machine learning” was coined![^1]
@@ -120,7 +126,7 @@ $$
 Ax = \hat{y},
 $$
 
-where $A$ is an $n$ by $d$ matrix ($n$ are the number of data points we have, $d$ represents the number of features our dataset has), $x$ is a vector representing our parameters, and $\hat{y}$ is our prediction. Our goal is to find the $x$ which minimizes the MSE between our predictions and our true labels. Lets rewrite MSE:
+where $A$ is an $n$ by $d$ matrix ($n$ are the number of data points we have, $d$ represents the number of features our dataset has), $x$ is a vector representing our parameters, and $\hat{y}$ is our prediction. Our goal is to find the $x$ which minimizes the MSE between our predictions and our true labels. Let's rewrite MSE:
 
 
 $$
@@ -150,7 +156,7 @@ Notice that $y^T y$ is dropped since it doesn't depend on $x$: the derivatives o
 
 ### Evaluating Gradients
 
-Now we need to evaluate $\nabla \left(x^T A^T A x\right)$, $\nabla \left(x^T A^T y\right)$, and $\nabla \left(y^T A x\right)$. A lot of tedious math is to follow. If that doesn't interest you, feel free to skip here [INSERT SKIP].
+Now we need to evaluate $\nabla \left(x^T A^T A x\right)$, $\nabla \left(x^T A^T y\right)$, and $\nabla \left(y^T A x\right)$. A lot of tedious math is to follow. If that doesn't interest you, feel free to skip [here](#combining-evaluated-gradients).
 
 #### Evaluating $\nabla \left(x^T A^T A x\right)$
 
@@ -185,7 +191,7 @@ x_2 \sum_{i = 1}^{d} S_{2i} x_i
 x_d \sum_{i = 1}^{d} S_{di} x_i.
 $$
 
-Lets consider the partial derivative of the above with respect to $x_k$:
+Let's consider the partial derivative of the above with respect to $x_k$:
 $$
 \begin{aligned}
 \frac{\partial}{\partial x_k} x^T S x
@@ -316,6 +322,65 @@ $$
 \nabla f(x) = 0 \implies A^T A x = A^T y.
 $$
 
-This is very nice, but this equation only helps us if we know that 
+This is very nice, but this equation only helps us if we know that it has a solution! We can intuit that this system is consistent (which means it has a solution) by considering that $f(x)$ has to be positive everywhere, and shouldn't asympoticaly approach an infimum along some sequence of parameter vectors whose norm approached infinity. But to be more rigourous, we can show the above system is consistent rigorously. 
 
+(P.S, $A^T A x = A^T y$ is called the normal equation, providing the title for this section!)
 
+### Proving the Existence of a Solution
+
+We want to show that the equation $A^T A x = A^T y$ has a solution by proving that 
+$$
+\col \left(A^T A\right) = \col \left(A^T\right)
+$$ {#eq-col-eq}
+($\col B$ means column space, i.e. the set of vectors which can be produced by multiplying $x \in \mathbb{R^d}$ with $B$). Proving equatioin [-@eq-col-eq] tell us since that $A^T y \in \col \left(A^T\right) = \col \left( A^T A\right)$, there exists an $x$ such that $A^T A x = A^T y$. We will prove equation [-@eq-col-eq] in two steps:
+
+1. showing $\nul B^T B = \nul B$
+2. showing $\nul \left( B\right)^\perp = \col \left( B^T \right)$.
+
+#### Proving Step 1
+
+"$\implies$" Say $x \in \nul B$, then $$Bx = \vec{0} \implies B^T B x = 0,$$ and therefore $$x \in \nul B^T B \implies \nul B \subset \nul B^t B.$$
+
+"$\impliedby$" Say $x \in \nul B^T B$, then $$B^T B x = \vec{0} \implies x^T B^T B x = 0.$$ But $$x^T B^T B x = \langle Bx, Bx \rangle = \|{Bx}\|2 = 0 \implies Bx = 0,$$ which implies $$\nul B^T B \subset \nul B.$$
+
+Combining these two proves that $$\nul B = \nul B^t B.$$ {#eq-step1}
+
+#### Proving Step 2
+
+Showing step 2 will involve proving and inclusion then doing a dimentionality count.
+
+First, let's say $x \in \col B^T$ and $w \in \nul B$. Then $x = B^T y$, and $Bw = \vec{0}$. Well, $$\langle w, x \rangle = w^T x = w^T B^T y = y^T B w = y^T \vec{0} = 0.$$ So $x$ is perpendicular to the nullity of $B$: $$x \in  \nul \left(B \right)^\perp.$$ This implies that $$\col B \subset \nul \left(B \right)^\perp.$$ {#eq-sub}
+
+Now, we use the dimension theorem and a property of the orthogonal compliment to show that $$\dim \col B =\dim \nul \left(B \right)^\perp.$$
+
+Say $B$ is $n \times m$, so $\col B \subset \mathbb{R}^n$. Then by the dimension theorem, $$n = \rk B + \dim \nul B.$$ Since $\rk B = \rk B^T,$ 
+$$
+n = \rk B^T + \dim \nul B \implies \rk B^T = n - \dim \nul B.
+$$ {#eq-1}
+
+Because $\nul B$ is a subsapce of $\mathbf{R}^n$, $$\mathbb{R}^n = \nul B \oplus \left( \nul B\right)^\perp \implies n = \dim \nul B + \dim \left( \nul B\right)^\perp $$ $$\implies \dim \left( \nul B\right)^\perp = n - \dim \nul B.$$ {#eq-2}
+
+Combining equations [-eq-1] and [-@eq-2] shows us that
+
+$$
+\rk B^T = \dim \left( \nul B\right)^\perp.
+$$ {#eq-step2}
+Becuase $\rk B^T = \dim \col B^T$, we have
+
+$$ \dim \col B^T = \dim \left( \nul B\right)^\perp,$$
+which combined with equation [-@eq-sub] shows that $$\col B^T = \nul \left(B \right)^\perp.$$
+
+#### Combining the Steps
+
+Applying equation [-@eq-step1] to our data matrix $A$, we have
+$$
+\nul A = \nul A^T A \implies \left( \nul A\right)^\perp = \left( \nul A^T A \right)^\perp .
+$$
+Now applying [-@eq-step2] from step 2 to the above yields 
+$$
+\col A^T = \col \left( A^T A \right)^T = \col A^T A.
+$$
+### Conclusion
+Since $A^T y \in \col A^T$, we know that $A^T y \in \col A^T A$, which tells us that there must exist an parameter vector $x$ such that $A^TA x = A^T y$, and as we already demonstrated, such a solution is the minimizing solution to the MSE!
+
+This means that the optimal set of parameters for linear regression tasks under MSE has a closed form solution.
