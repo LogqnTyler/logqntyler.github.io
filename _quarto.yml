@@ -1,6 +1,5 @@
 project:
   type: website
-
 website:
   description: "Logan Foster's Personal Page"
   site-url: https://zup7mn.github.io # you must change this appropriately for RSS feeds to work properly
@@ -16,7 +15,7 @@ format:
   html:
     theme:
       - cosmo
-      - brand
+      # - brand
     css: styles.css
 
 

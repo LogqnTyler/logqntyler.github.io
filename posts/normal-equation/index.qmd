@@ -1,9 +1,10 @@
 ---
 title: "Understanding the Normal Equation"
 author: "Logan Foster"
+description: "A guide to linear regression's closed form solution starting from first principles"
 date: "2026-06-21"
 categories: [Math]
-image: "image.jpg"
+image: thumbnail.png
 format:
     html:
         code-fold: true
