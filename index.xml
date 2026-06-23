@@ -6,15 +6,15 @@
       version="2.0">
 <channel>
 <title>Logan&#39;s Blog</title>
-<link>https://zup7mn.github.io/</link>
-<atom:link href="https://zup7mn.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<link>https://logqntyler.github.io/</link>
+<atom:link href="https://logqntyler.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description>Logan Foster&#39;s Personal Page</description>
 <generator>quarto-1.9.36</generator>
 <lastBuildDate>Sat, 20 Jun 2026 21:00:00 GMT</lastBuildDate>
 <item>
   <title>Understanding the Normal Equation</title>
   <dc:creator>Logan Foster</dc:creator>
-  <link>https://zup7mn.github.io/posts/normal-equation/</link>
+  <link>https://logqntyler.github.io/posts/normal-equation/</link>
   <description><![CDATA[ 
 
 
@@ -655,9 +655,9 @@ if (outputEl) {{
 </ol>
 </section></div> ]]></description>
   <category>Math</category>
-  <guid>https://zup7mn.github.io/posts/normal-equation/</guid>
+  <guid>https://logqntyler.github.io/posts/normal-equation/</guid>
   <pubDate>Sat, 20 Jun 2026 21:00:00 GMT</pubDate>
-  <media:content url="https://zup7mn.github.io/posts/normal-equation/thumbnail.png" medium="image" type="image/png" height="106" width="144"/>
+  <media:content url="https://logqntyler.github.io/posts/normal-equation/thumbnail.png" medium="image" type="image/png" height="106" width="144"/>
 </item>
 </channel>
 </rss>
