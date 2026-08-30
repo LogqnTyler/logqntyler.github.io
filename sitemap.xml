@@ -1,15 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://logqntyler.github.io/about.html</loc>
-    <lastmod>2026-06-21T17:02:23.237Z</lastmod>
+    <loc>https://zup7mn.github.io/about.html</loc>
+    <lastmod>2026-08-29T23:52:07.632Z</lastmod>
   </url>
   <url>
-    <loc>https://logqntyler.github.io/posts/normal-equation/index.html</loc>
-    <lastmod>2026-06-22T06:35:23.680Z</lastmod>
+    <loc>https://zup7mn.github.io/projects/index.html</loc>
+    <lastmod>2026-08-30T00:21:09.339Z</lastmod>
   </url>
   <url>
-    <loc>https://logqntyler.github.io/index.html</loc>
-    <lastmod>2026-06-22T06:36:23.402Z</lastmod>
+    <loc>https://zup7mn.github.io/projects/geometry-of-data-part-3/index.html</loc>
+    <lastmod>2026-08-30T01:04:02.609Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/projects/geometry-of-data-part-5/index.html</loc>
+    <lastmod>2026-08-30T00:53:56.008Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/posts/normal-equation/index.html</loc>
+    <lastmod>2026-08-30T00:38:14.947Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/index.html</loc>
+    <lastmod>2026-08-29T23:52:07.632Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/projects/geometry-of-data-part-4/index.html</loc>
+    <lastmod>2026-08-30T00:53:56.007Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/projects/geometry-of-data-part-2/index.html</loc>
+    <lastmod>2026-08-30T00:53:56.006Z</lastmod>
+  </url>
+  <url>
+    <loc>https://zup7mn.github.io/projects/geometry-of-data-part-1/index.html</loc>
+    <lastmod>2026-08-30T00:21:43.175Z</lastmod>
   </url>
 </urlset>
