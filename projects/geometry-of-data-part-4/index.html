@@ -455,7 +455,7 @@ and
 <p><span class="math display">\[
 \gamma_a(t) = (0, 2^t), \: t \in [0,1]; \; \gamma_b(t) = (0, 2^t), \: t \in [2,3]
 \]</span></p>
-<div id="d41bbfdd" class="cell">
+<div id="bdfe60e2" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>
@@ -498,7 +498,7 @@ and
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="95f307f3" class="cell">
+<div id="6184ec98" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>g_b_0 <span class="op">=</span> NormalDistribution(<span class="dv">0</span>, <span class="dv">4</span>)</span>
@@ -543,7 +543,7 @@ L(\gamma_a) = \int_0^1 \| \gamma_a'(t) \| dt = \int_0^1 \sqrt{2}c  dt = \sqrt{2}
 <p><span class="math display">\[
 L(\gamma_b) = \int_2^3 \| \gamma_b'(t) \| dt = \int_2^3 \sqrt{2}c dt = \sqrt{2} \ln 2.
 \]</span></p>
-<div id="71b92273" class="cell">
+<div id="4ac585ad" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -597,7 +597,7 @@ a_2\tanh(c_2) = 2, \; \frac{a_2}{\sqrt{2}} \operatorname{sech}(c_2) = 2 \implies
 a = \frac{2}{\tanh(c)} \approx 3.4641.
 \]</span></p>
 <p>Lets plot these:</p>
-<div id="9e8932fc" class="cell">
+<div id="ef28d79e" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -627,7 +627,7 @@ a = \frac{2}{\tanh(c)} \approx 3.4641.
 <span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="050ab9c9" class="cell">
+<div id="afc7dcd0" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -657,7 +657,7 @@ a = \frac{2}{\tanh(c)} \approx 3.4641.
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="43e26dec" class="cell">
+<div id="a4a1c545" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -731,7 +731,7 @@ a = \frac{2}{\tanh(c)} \approx 3.4641.
 \]</span></p>
 <p>It seems that the geodesic length between two distributions on the Poincaré plane that are invarient to parameter scaling as long as the geodesic curve connecting the two distributions has its highest standard deviation at <span class="math inline">\(\mu = 0\)</span>. Below is an example.</p>
 <p>For curves which have a standard deviation peak at <span class="math inline">\(\mu = b\)</span>, I believe the same effect can be achieved by subtracting <span class="math inline">\(b\)</span> from <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span> of the first and second distribution respectively, scaling the parameters by the desired constant, and then adding <span class="math inline">\(b\)</span> back to <span class="math inline">\(\mu_1\)</span> and <span class="math inline">\(\mu_2\)</span>.</p>
-<div id="e79d1455" class="cell">
+<div id="5ede0570" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -794,7 +794,7 @@ a = \frac{2}{\tanh(c)} \approx 3.4641.
 D(t) = \int_{-1}^t \| \gamma'(t) \| dt = (t + 1) \sqrt{2} c, \; \frac{D(t)}{2 \sqrt{2} c} \frac{1}{2} \implies \frac{t+1}{2} = \frac{1}{2} \implies 2 = 0.
 \]</span></p>
 <p>So the Frechet mean is at <span class="math inline">\(\gamma(0) = (0, 1.2247)\)</span>. Below is a graph with the PDFs and their mean.</p>
-<div id="533b9335" class="cell">
+<div id="a02b62c3" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> go.Figure()</span>
@@ -875,7 +875,7 @@ p = \frac{1}{1+e^{-z}} = \frac{e^z}{e^z + 1} \iff \left( e^z + 1\right) p = e^z
 &amp;= x_i (y_i - p_i).
 \end{aligned}\]</span>
 <p>This is very manageable!</p>
-<div id="ebee1d07" class="cell">
+<div id="1a916a8f" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
@@ -938,7 +938,7 @@ p = \frac{1}{1+e^{-z}} = \frac{e^z}{e^z + 1} \iff \left( e^z + 1\right) p = e^z
 <span id="cb9-58"><a href="#cb9-58" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> likelihood, G</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="729fb076" class="cell">
+<div id="11dc8e10" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> torchvision.datasets <span class="im">as</span> datasets</span>
@@ -964,7 +964,7 @@ p = \frac{1}{1+e^{-z}} = \frac{e^z}{e^z + 1} \iff \left( e^z + 1\right) p = e^z
 <span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>grads <span class="op">=</span> []</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="74a2c2d4" class="cell">
+<div id="d871784a" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">50</span>):</span>
@@ -974,7 +974,7 @@ p = \frac{1}{1+e^{-z}} = \frac{e^z}{e^z + 1} \iff \left( e^z + 1\right) p = e^z
 <span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>    likelihoods_natural.append(ll_natural)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="13b9dd96" class="cell">
+<div id="e93aaa6a" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.graph_objects <span class="im">as</span> go</span>

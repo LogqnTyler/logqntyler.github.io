@@ -671,7 +671,7 @@ if (outputEl) {{
 
 <section id="problem-1-metropolis-hasting-with-independent-sampler" class="level2">
 <h2 class="anchored" data-anchor-id="problem-1-metropolis-hasting-with-independent-sampler">Problem 1: Metropolis Hasting with Independent Sampler</h2>
-<div id="4d3414bb" class="cell">
+<div id="a7ee200b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -1000,7 +1000,7 @@ font-style: inherit;">+</span> epsilon)</span></code></pre></div></div>
 </details>
 </div>
 <p>Let’s setup the MH sampler.</p>
-<div id="2b8e654b" class="cell">
+<div id="53a77957" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
@@ -1293,7 +1293,7 @@ font-style: inherit;">=</span> x_last</span></code></pre></div></div>
 <section id="part-a-first-sampling-batch-sigma-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-a-first-sampling-batch-sigma-1">Part A: First Sampling Batch (<img src="https://latex.codecogs.com/png.latex?%5Csigma%20=%201">)</h3>
 <p>Running our MH independent sampler with <img src="https://latex.codecogs.com/png.latex?%5Csigma%20=%201">.</p>
-<div id="92600c7e" class="cell">
+<div id="bb1765b2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">N <span class="op" style="color: #5E5E5E;
@@ -1336,7 +1336,7 @@ font-style: inherit;">%"</span>)</span></code></pre></div></div>
 </section>
 <section id="part-b-plotting" class="level3">
 <h3 class="anchored" data-anchor-id="part-b-plotting">Part B: Plotting</h3>
-<div id="89e16325" class="cell">
+<div id="642eae24" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
@@ -1479,7 +1479,7 @@ font-style: inherit;">'equal'</span>)</span>
 </section>
 <section id="part-c-experiments-with-different-sigma2" class="level3">
 <h3 class="anchored" data-anchor-id="part-c-experiments-with-different-sigma2">Part C: Experiments with different <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2"></h3>
-<div id="dc83c42c" class="cell">
+<div id="9d5eaca4" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><span class="co" style="color: #5E5E5E;
@@ -1688,7 +1688,7 @@ font-style: inherit;">'equal'</span>)</span>
 </section>
 <section id="problem-2-mh-sampling-with-dependent-proposal-dist" class="level2">
 <h2 class="anchored" data-anchor-id="problem-2-mh-sampling-with-dependent-proposal-dist">Problem 2: MH Sampling with Dependent Proposal Dist</h2>
-<div id="c662384d" class="cell">
+<div id="9cfdd1ce" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="kw" style="color: #003B4F;
@@ -1901,7 +1901,7 @@ font-style: inherit;">=</span> x_last</span></code></pre></div></div>
 </div>
 <section id="part-a-acceptance-rate" class="level3">
 <h3 class="anchored" data-anchor-id="part-a-acceptance-rate">Part A: Acceptance Rate</h3>
-<div id="03fb5715" class="cell">
+<div id="c2740a14" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">N <span class="op" style="color: #5E5E5E;
@@ -1944,7 +1944,7 @@ font-style: inherit;">%"</span>)</span></code></pre></div></div>
 </section>
 <section id="part-b-plotting-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-b-plotting-1">Part B: Plotting</h3>
-<div id="ace54b04" class="cell">
+<div id="125242a6" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="co" style="color: #5E5E5E;
@@ -2106,7 +2106,7 @@ font-style: inherit;">'equal'</span>)</span>
 </section>
 <section id="part-c-experiments-with-different-sigma2-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-c-experiments-with-different-sigma2-1">Part C: Experiments with different <img src="https://latex.codecogs.com/png.latex?%5Csigma%5E2"></h3>
-<div id="856bbda5" class="cell">
+<div id="c6df2ba2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="co" style="color: #5E5E5E;
@@ -2334,7 +2334,7 @@ font-style: inherit;">'equal'</span>)</span>
 <p>We will use the Metropolis-adjusted Langevin Algorith to generate samples from our target distribution. The Langevin Algorithm is <img src="https://latex.codecogs.com/png.latex?%0Ax_k%20=%20x_%7Bk-1%7D%20+%20%5Cgamma%20%5Cnabla%20%5Clog%20f(x_%7Bk-1%7D)%20+%20%5Csqrt%7B2%20%5Cgamma%7D%20%5Cxi,%20%5C;%20%5Cxi%20%5Csim%20N(0,%201),%0A"> so <img src="https://latex.codecogs.com/png.latex?x_k%20%5Csim%20N(x_%7Bk-1%7D%20+%20%5Cgamma%20%5Cnabla%20%5Clog%20f(x),%202%20%20%5Cgamma)">.</p>
 <p>Our acceptance probability will be</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Calpha(x_%7Bk-1%7D),%20x_k)%20=%20%5Cmin%20%5Cleft%5C%7B%201,%20%5Cfrac%7Bf(x_%7Bk-1%7D)q(x_k%20%7C%20x_%7Bk-1%7D)%7D%7Bf(x_k)q(x_%7Bk-1%7D%7Cx_k)%7D%20%5Cright%5C%7D%0A"> where <img src="https://latex.codecogs.com/png.latex?%0Aq(y%20%7C%20x)%20%5Cpropto%20%5Cexp%20%5Cleft(%20%20%5Cfrac%7B%7C%7C%20y%20-%20(x%20+%20%5Cgamma%20%5Cnabla%20%5Clog%20f(x))%20%7C%7C%5E2%7D%7B2%20%5Ccdot%202%5Cgamma%7D%20%20%20%5Cright).%0A"></p>
-<div id="42e6c4ec" class="cell">
+<div id="00d8aa86" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="kw" style="color: #003B4F;
@@ -2738,7 +2738,7 @@ font-style: inherit;">=</span> x_last</span></code></pre></div></div>
 </div>
 <section id="part-a-acceptance-rate-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-a-acceptance-rate-1">Part A: Acceptance Rate</h3>
-<div id="f2f475a5" class="cell">
+<div id="1711026a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">N <span class="op" style="color: #5E5E5E;
@@ -2785,7 +2785,7 @@ font-style: inherit;">print</span>(sampler.grad_us)</span></code></pre></div></d
 </section>
 <section id="part-b-plotting-2" class="level3">
 <h3 class="anchored" data-anchor-id="part-b-plotting-2">Part B: Plotting</h3>
-<div id="e3bd8cbe" class="cell">
+<div id="5e11c55f" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="co" style="color: #5E5E5E;
@@ -2945,7 +2945,7 @@ font-style: inherit;">'equal'</span>)</span>
 </section>
 <section id="part-c-experiments-with-different-gamma" class="level3">
 <h3 class="anchored" data-anchor-id="part-c-experiments-with-different-gamma">Part C: Experiments with different <img src="https://latex.codecogs.com/png.latex?%5Cgamma"></h3>
-<div id="859afe5f" class="cell">
+<div id="68c29394" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="co" style="color: #5E5E5E;
@@ -3177,7 +3177,7 @@ font-style: inherit;">'equal'</span>)</span>
 <p>When we write <img src="https://latex.codecogs.com/png.latex?f(x)"> as <img src="https://latex.codecogs.com/png.latex?%5Cfrac%7B1%7D%7Bc%7D%20%5Cexp(-U)">, it becomes clear why we take the negative log of the distribution for <img src="https://latex.codecogs.com/png.latex?U">.</p>
 <p>We use the leapfrog integrator to attain even better energy conversion. The leapfrog algorith works as follows:</p>
 <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0Ap_i(t%20+%20%5Cepsilon%20/%202%20)%20&amp;=%20p_i(t)%20-%20(%5Cepsilon%20/%202)%20%5Cpartial_%7Bq_i%7D%20U%20(q(t))%20%5C%5C%0Aq_i(t%20+%20%5Cepsilon)%20&amp;=%20q_i(t)%20+%20%5Cepsilon%20%5Cfrac%7Bp_i(t%20+%20%5Cepsilon%20/%202%20)%7D%7Bm_i%7D%20%5C%5C%0Ap(t%20+%20%5Cepsilon)%20&amp;=%20p(t%20+%20%5Cepsilon%20/%202)%20-%20(%5Cepsilon%20/%202)%20%5Cpartial_%7Bq_i%7D%20U(q(t+%5Cepsilon))%0A%5Cend%7Baligned%7D">
-<div id="94c6686e" class="cell">
+<div id="394a7f4b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="kw" style="color: #003B4F;
@@ -3537,7 +3537,7 @@ background-color: null;
 font-style: inherit;">#     print(i)</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="d38e586e" class="cell">
+<div id="715f2a35" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">sampler <span class="op" style="color: #5E5E5E;
@@ -3590,7 +3590,7 @@ background-color: null;
 font-style: inherit;"># print(sampler.alphas.max())</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="4fb48bfa" class="cell">
+<div id="46608710" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
@@ -3866,7 +3866,7 @@ and
 <h4 class="anchored" data-anchor-id="part-d">Part D</h4>
 <p>Let’s consider the geodesic curves between the gaussians with parameters <img src="https://latex.codecogs.com/png.latex?(0,%201)"> and <img src="https://latex.codecogs.com/png.latex?(0,%202)">, and between gaussians with parameters <img src="https://latex.codecogs.com/png.latex?(0,%204)"> and <img src="https://latex.codecogs.com/png.latex?(0,%208)">:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cgamma_a(t)%20=%20(0,%202%5Et),%20%5C:%20t%20%5Cin%20%5B0,1%5D;%20%5C;%20%5Cgamma_b(t)%20=%20(0,%202%5Et),%20%5C:%20t%20%5Cin%20%5B2,3%5D%0A"></p>
-<div id="d41bbfdd" class="cell">
+<div id="bdfe60e2" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -4117,7 +4117,7 @@ font-style: inherit;">"</span></span>
 <span id="cb1-38">fig.show()</span></code></pre></div></div>
 </details>
 </div>
-<div id="95f307f3" class="cell">
+<div id="6184ec98" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1">g_b_0 <span class="op" style="color: #5E5E5E;
@@ -4294,7 +4294,7 @@ font-style: inherit;">"</span></span>
 <p>Our geodesic distances</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AL(%5Cgamma_a)%20=%20%5Cint_0%5E1%20%5C%7C%20%5Cgamma_a'(t)%20%5C%7C%20dt%20=%20%5Cint_0%5E1%20%5Csqrt%7B2%7Dc%20%20dt%20=%20%5Csqrt%7B2%7D%20%5Cln%202%0A"></p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AL(%5Cgamma_b)%20=%20%5Cint_2%5E3%20%5C%7C%20%5Cgamma_b'(t)%20%5C%7C%20dt%20=%20%5Cint_2%5E3%20%5Csqrt%7B2%7Dc%20dt%20=%20%5Csqrt%7B2%7D%20%5Cln%202.%0A"></p>
-<div id="71b92273" class="cell">
+<div id="4ac585ad" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">fig <span class="op" style="color: #5E5E5E;
@@ -4434,7 +4434,7 @@ font-style: inherit;">"</span></span>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cimplies%20%5Csinh%20(c_2)%20=%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%7D%7D%20%5Cimplies%20c_2%20=%20%5Csinh%5E%7B-1%7D%20(%5Cfrac%7B1%7D%7B%5Csqrt%7B2%7D%7D)%20%5Capprox%200.6585.%0A"></p>
 <p>Finding <img src="https://latex.codecogs.com/png.latex?a"> is easy: <img src="https://latex.codecogs.com/png.latex?%0Aa%20=%20%5Cfrac%7B2%7D%7B%5Ctanh(c)%7D%20%5Capprox%203.4641.%0A"></p>
 <p>Lets plot these:</p>
-<div id="9e8932fc" class="cell">
+<div id="ef28d79e" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1">fig <span class="op" style="color: #5E5E5E;
@@ -4604,7 +4604,7 @@ font-style: inherit;">"</span></span>
 <span id="cb4-25">fig.show()</span></code></pre></div></div>
 </details>
 </div>
-<div id="050ab9c9" class="cell">
+<div id="afc7dcd0" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">fig <span class="op" style="color: #5E5E5E;
@@ -4774,7 +4774,7 @@ font-style: inherit;">"</span></span>
 <span id="cb5-25">fig.show()</span></code></pre></div></div>
 </details>
 </div>
-<div id="43e26dec" class="cell">
+<div id="a4a1c545" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1">fig <span class="op" style="color: #5E5E5E;
@@ -5072,7 +5072,7 @@ font-style: inherit;">"</span></span>
 <p><img src="https://latex.codecogs.com/png.latex?%0A%5Cimplies%20L(%5Cgamma)%20=%20%5Cint_%7B-1%7D%5E1%20%5Csqrt%7B2%7Dc%20dt%20=%202%20%5Csqrt%7B2%7D%20c%20=%202%20%5Csqrt%7B2%7D%20%5Coperatorname%7Barcsinh%7D%20%5Cleft(%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%7D%7D%5Cright).%0A"></p>
 <p>It seems that the geodesic length between two distributions on the Poincaré plane that are invarient to parameter scaling as long as the geodesic curve connecting the two distributions has its highest standard deviation at <img src="https://latex.codecogs.com/png.latex?%5Cmu%20=%200">. Below is an example.</p>
 <p>For curves which have a standard deviation peak at <img src="https://latex.codecogs.com/png.latex?%5Cmu%20=%20b">, I believe the same effect can be achieved by subtracting <img src="https://latex.codecogs.com/png.latex?b"> from <img src="https://latex.codecogs.com/png.latex?%5Cmu_1"> and <img src="https://latex.codecogs.com/png.latex?%5Cmu_2"> of the first and second distribution respectively, scaling the parameters by the desired constant, and then adding <img src="https://latex.codecogs.com/png.latex?b"> back to <img src="https://latex.codecogs.com/png.latex?%5Cmu_1"> and <img src="https://latex.codecogs.com/png.latex?%5Cmu_2">.</p>
-<div id="e79d1455" class="cell">
+<div id="5ede0570" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1">fig <span class="op" style="color: #5E5E5E;
@@ -5335,7 +5335,7 @@ font-style: inherit;">#fig.update_layout(width=600, height=600)</span></span>
 <p>We already found the distance between PDF <img src="https://latex.codecogs.com/png.latex?A"> with params <img src="https://latex.codecogs.com/png.latex?(-1,%201)"> and <img src="https://latex.codecogs.com/png.latex?B"> with params <img src="https://latex.codecogs.com/png.latex?(1,%201)"> as <img src="https://latex.codecogs.com/png.latex?2%20%5Csqrt%7B2%7D%20c">. Since we only have two points, finding the Frechet mean is easy, we just need to find the point M which is equidistant to both A and B, which will be halfway through the goedesic. We both know this will happen at <img src="https://latex.codecogs.com/png.latex?t%20=%200">, but lets prove it:</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0AD(t)%20=%20%5Cint_%7B-1%7D%5Et%20%5C%7C%20%5Cgamma'(t)%20%5C%7C%20dt%20=%20(t%20+%201)%20%5Csqrt%7B2%7D%20c,%20%5C;%20%5Cfrac%7BD(t)%7D%7B2%20%5Csqrt%7B2%7D%20c%7D%20%5Cfrac%7B1%7D%7B2%7D%20%5Cimplies%20%5Cfrac%7Bt+1%7D%7B2%7D%20=%20%5Cfrac%7B1%7D%7B2%7D%20%5Cimplies%202%20=%200.%0A"></p>
 <p>So the Frechet mean is at <img src="https://latex.codecogs.com/png.latex?%5Cgamma(0)%20=%20(0,%201.2247)">. Below is a graph with the PDFs and their mean.</p>
-<div id="533b9335" class="cell">
+<div id="a02b62c3" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">fig <span class="op" style="color: #5E5E5E;
@@ -5555,7 +5555,7 @@ font-style: inherit;">"</span></span>
 <p>Remembering that <img src="https://latex.codecogs.com/png.latex?z%20=%20%5Cvec%7Bx%7D_i%5ET%20%7B%5Ctheta%7D">, we compute the gradient:</p>
 <img src="https://latex.codecogs.com/png.latex?%5Cbegin%7Baligned%7D%0A%5Cpartial_%5Ctheta%20%5Cell_i%20(%5Ctheta)%20&amp;=%20%5Cpartial_%5Ctheta%20y_i%20%5Cvec%7Bx%7D_i%5ET%20%7B%5Ctheta%7D%20-%20%5Cpartial_%5Ctheta%20%5Clog%20%5Cleft(%20e%5E%7B%5Cvec%7Bx%7D_i%5ET%20%7B%5Ctheta%7D%7D%20+%201%20%5Cright)%20%5C%5C%0A&amp;=%20y_i%20%5Cvec%7Bx_i%7D%20-%20%5Cfrac%7B%5Cvec%7Bx_i%7D%20e%5E%7B%5Cvec%7Bx%7D_i%5ET%20%7B%5Ctheta%7D%7D%7D%7Be%5E%7B%5Cvec%7Bx%7D_i%5ET%20%7B%5Ctheta%7D%7D%20+1%7D%20%5C%5C%0A&amp;=%20y_i%20%5Cvec%7Bx_i%7D%20-%20%5Cvec%7Bx_i%7D%20p_i%20%5C%5C%0A&amp;=%20x_i%20(y_i%20-%20p_i).%0A%5Cend%7Baligned%7D">
 <p>This is very manageable!</p>
-<div id="ebee1d07" class="cell">
+<div id="1a916a8f" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="im" style="color: #00769E;
@@ -5860,7 +5860,7 @@ font-weight: bold;
 font-style: inherit;">return</span> likelihood, G</span></code></pre></div></div>
 </details>
 </div>
-<div id="729fb076" class="cell">
+<div id="11dc8e10" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
@@ -5980,7 +5980,7 @@ background-color: null;
 font-style: inherit;">=</span> []</span></code></pre></div></div>
 </details>
 </div>
-<div id="74a2c2d4" class="cell">
+<div id="d871784a" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><span class="cf" style="color: #003B4F;
@@ -6008,7 +6008,7 @@ font-style: inherit;">=</span> lr_natural.train_one_epoch_natural(X, y)</span>
 <span id="cb11-5">    likelihoods_natural.append(ll_natural)</span></code></pre></div></div>
 </details>
 </div>
-<div id="13b9dd96" class="cell">
+<div id="e93aaa6a" class="cell">
 <details class="code-fold">
 <summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
@@ -6104,7 +6104,7 @@ font-style: inherit;">'Log-Likelihood'</span></span>
 <section id="part-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
 <p>Sample ellipse:</p>
-<div id="be0f46a8" class="cell">
+<div id="187e13f7" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="co" style="color: #5E5E5E;
@@ -6173,7 +6173,7 @@ background-color: null;
 font-style: inherit;"># ellipse.get_ellipse(a = 12, b = 6, row = 48, col = 35, theta = 0).dtype</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="03e3ae6a" class="cell">
+<div id="71a8b42e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
@@ -6254,7 +6254,7 @@ font-style: inherit;">=</span> e</span></code></pre></div></div>
 </section>
 <section id="c.-pca" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca">C. PCA</h4>
-<div id="1ca9bdfc" class="cell">
+<div id="8127da97" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
@@ -6283,7 +6283,7 @@ font-style: inherit;">;</span></span></code></pre></div></div>
 </details>
 </div>
 <pre><code>(1000, 4096)</code></pre>
-<div id="b78ade2e" class="cell">
+<div id="fbc4e524" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">n_components <span class="op" style="color: #5E5E5E;
@@ -6321,7 +6321,7 @@ font-style: inherit;"># pca.singular_values_</span></span></code></pre></div></d
 </section>
 <section id="d.-plotting-pca" class="level4">
 <h4 class="anchored" data-anchor-id="d.-plotting-pca">D. Plotting PCA</h4>
-<div id="4d40eaff" class="cell">
+<div id="cfd90873" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="im" style="color: #00769E;
@@ -6421,7 +6421,7 @@ font-style: inherit;">1.25</span>)))</span>
 </figure>
 </div>
 <p>Wow, this shape is fascinating! I absolutely didn’t excpet the data to look like this. This shape looks like a warped sheet of paper (lending support to my hypothesis that the intrisic dimensionality of the data is 2) which comes together to 4 “corners”. I wonder if the data points here represent the elipses with centers at the “corners” at the possible combinations of x and y values. Let’s find out.</p>
-<div id="cbf00075" class="cell">
+<div id="1703185c" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1">fig_1 <span class="op" style="color: #5E5E5E;
@@ -6484,7 +6484,7 @@ font-style: inherit;">1.25</span>)))</span>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a1f54a82" class="cell">
+<div id="8dcf3261" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1">fig_2 <span class="op" style="color: #5E5E5E;
@@ -6559,7 +6559,7 @@ font-style: inherit;">1.25</span>)))</span>
 </section>
 <section id="b.-isomap" class="level4">
 <h4 class="anchored" data-anchor-id="b.-isomap">B. IsoMap</h4>
-<div id="55ff8599" class="cell">
+<div id="23c44a17" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="im" style="color: #00769E;
@@ -6674,7 +6674,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="c.-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="c.-isomap-visualization">C. IsoMap Visualization</h4>
-<div id="3beeba2d" class="cell">
+<div id="8d4603c0" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="im" style="color: #00769E;
@@ -6736,7 +6736,7 @@ font-style: inherit;">"Colored by Row"</span>,</span>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a20480d9" class="cell">
+<div id="1b4551fe" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1">px.scatter(</span>
@@ -6774,7 +6774,7 @@ font-style: inherit;">"Colored by Column"</span>,</span>
 </section>
 <section id="d.-3d-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="d.-3d-isomap-visualization">D. 3D IsoMap Visualization</h4>
-<div id="92dea75e" class="cell">
+<div id="4b1afc20" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1">fig <span class="op" style="color: #5E5E5E;
@@ -6852,7 +6852,7 @@ font-style: inherit;">1.25</span>)))</span></code></pre></div></div>
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<div id="9a02a9c9" class="cell">
+<div id="039b2cda" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><span class="im" style="color: #00769E;
@@ -7414,7 +7414,7 @@ font-style: inherit;">True</span>)</span></code></pre></div></div>
 </details>
 </div>
 <pre><code>Device: mps</code></pre>
-<div id="a2d8e068" class="cell">
+<div id="ef351822" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1">latent_dim <span class="op" style="color: #5E5E5E;
@@ -7464,7 +7464,7 @@ font-style: inherit;">"convAE2.pth"</span>)</span></code></pre></div></div>
 <pre><code>Loaded checkpoint</code></pre>
 <section id="a.-evaluation-of-reconstruction" class="level4">
 <h4 class="anchored" data-anchor-id="a.-evaluation-of-reconstruction">A. Evaluation of Reconstruction</h4>
-<div id="b751568a" class="cell">
+<div id="29c75de2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
@@ -7752,7 +7752,7 @@ font-style: inherit;">"PCA Reconstruction"</span>])</span></code></pre></div></d
 </section>
 <section id="b.-increasing-latent-dim" class="level4">
 <h4 class="anchored" data-anchor-id="b.-increasing-latent-dim">B. Increasing Latent Dim</h4>
-<div id="e6183383" class="cell">
+<div id="49a7db8e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><span class="co" style="color: #5E5E5E;
@@ -7770,7 +7770,7 @@ background-color: null;
 font-style: inherit;"># convAE16.to(device)</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="a6f977a6" class="cell">
+<div id="a128bc52" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">latent_dim <span class="op" style="color: #5E5E5E;
@@ -7820,7 +7820,7 @@ font-style: inherit;">"convAE16.pth"</span>)</span></code></pre></div></div>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="5511c55b" class="cell">
+<div id="8760983e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><span class="co" style="color: #5E5E5E;
@@ -7952,7 +7952,7 @@ font-style: inherit;">"PCA Reconstruction"</span>])</span></code></pre></div></d
 <section id="c.-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca-in-latent-space">C. PCA in Latent Space</h4>
 <p><em>Note:</em> I’m running PCA on the embeddings from the training data, since the question did not specify the test dataset.</p>
-<div id="7d4d3029" class="cell">
+<div id="170d6df4" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">latent_embeddings <span class="op" style="color: #5E5E5E;
@@ -8045,7 +8045,7 @@ font-style: inherit;">1.25</span>)))</span></code></pre></div></div>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a48738bf" class="cell">
+<div id="e02c42cb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1">latent_embeddings <span class="op" style="color: #5E5E5E;
@@ -8142,7 +8142,7 @@ font-style: inherit;">1.25</span>)))</span></code></pre></div></div>
 </section>
 <section id="d.-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d.-immersion-test">D. Immersion Test</h4>
-<div id="3bef958e" class="cell">
+<div id="3e7dac05" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><span class="co" style="color: #5E5E5E;
@@ -8150,7 +8150,7 @@ background-color: null;
 font-style: inherit;"># Make a function that computes the rank of the Jacobian at any given input</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="2e81e1f4" class="cell">
+<div id="8e3c0ead" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><span class="im" style="color: #00769E;
@@ -8271,7 +8271,7 @@ background-color: null;
 font-style: inherit;">=</span> rank_16.cpu().numpy()</span></code></pre></div></div>
 </details>
 </div>
-<div id="612fd18e" class="cell">
+<div id="271331de" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1">fig <span class="op" style="color: #5E5E5E;
@@ -8328,7 +8328,7 @@ font-style: inherit;">20</span>])</span>
 </section>
 <section id="part-4" class="level3">
 <h3 class="anchored" data-anchor-id="part-4">Part 4</h3>
-<div id="64a98dca" class="cell">
+<div id="6255d281" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><span class="im" style="color: #00769E;
@@ -8399,7 +8399,7 @@ font-style: inherit;">1100</span>]</span></code></pre></div></div>
 </section>
 <section id="b-eigen-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="b-eigen-analysis">2.B Eigen Analysis</h4>
-<div id="a4bd873f" class="cell">
+<div id="130360a1" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><span class="im" style="color: #00769E;
@@ -8626,7 +8626,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="d-3d-isomap-scatter" class="level4">
 <h4 class="anchored" data-anchor-id="d-3d-isomap-scatter">2.D 3D Isomap Scatter</h4>
-<div id="e2bee319" class="cell">
+<div id="e93875fb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><span class="cf" style="color: #003B4F;
@@ -8670,7 +8670,7 @@ font-style: inherit;">"teapot_transformed.pth"</span>)</span></code></pre></div>
 </details>
 </div>
 <pre><code>Loaded transformed teapots</code></pre>
-<div id="e035f573" class="cell">
+<div id="77548126" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1">df <span class="op" style="color: #5E5E5E;
@@ -8748,7 +8748,7 @@ font-style: inherit;">1.25</span>)))</span></code></pre></div></div>
 </section>
 <section id="a-small-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="a-small-autoencoder">3.A Small Autoencoder</h4>
-<div id="7475a3a3" class="cell">
+<div id="3c568d03" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><span class="im" style="color: #00769E;
@@ -8801,7 +8801,7 @@ background-color: null;
 font-style: inherit;">True</span>)</span></code></pre></div></div>
 </details>
 </div>
-<div id="1771377a" class="cell">
+<div id="96458126" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><span class="co" style="color: #5E5E5E;
@@ -8856,7 +8856,7 @@ font-style: inherit;">"teapot_AE4.pth"</span>)</span></code></pre></div></div>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="1c4d2cb6" class="cell">
+<div id="d44b792b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><span class="co" style="color: #5E5E5E;
@@ -9003,7 +9003,7 @@ background-color: null;
 font-style: inherit;">;</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="d755cd05" class="cell">
+<div id="11441f60" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1">mean <span class="op" style="color: #5E5E5E;
@@ -9103,7 +9103,7 @@ font-style: inherit;">"PCA Reconstruction"</span>])</span></code></pre></div></d
 </section>
 <section id="b-larger-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="b-larger-autoencoder">3.B Larger Autoencoder</h4>
-<div id="43dd5b7e" class="cell">
+<div id="67bf0ace" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><span class="co" style="color: #5E5E5E;
@@ -9158,7 +9158,7 @@ font-style: inherit;">"teapot_AE16.pth"</span>)</span></code></pre></div></div>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="4f344c21" class="cell">
+<div id="469de214" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><span class="co" style="color: #5E5E5E;
@@ -9303,7 +9303,7 @@ font-style: inherit;">;</span></span>
 <span id="cb43-24">pca.fit(flat_teapots)</span></code></pre></div></div>
 </details>
 </div>
-<div id="d9da22b4" class="cell">
+<div id="7c0413b2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1">mean <span class="op" style="color: #5E5E5E;
@@ -9402,7 +9402,7 @@ font-style: inherit;">"PCA Reconstruction(16 dim)"</span>])</span></code></pre><
 </section>
 <section id="c-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c-pca-in-latent-space">3.C PCA in Latent Space</h4>
-<div id="f7efa583" class="cell">
+<div id="adbd0562" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1">latent_embeddings <span class="op" style="color: #5E5E5E;
@@ -9499,7 +9499,7 @@ font-style: inherit;">1.25</span>)))</span></code></pre></div></div>
 </section>
 <section id="d-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d-immersion-test">3.D Immersion Test</h4>
-<div id="4757a4d8" class="cell">
+<div id="6734ac67" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1">latents_4 <span class="op" style="color: #5E5E5E;
@@ -9550,7 +9550,7 @@ background-color: null;
 font-style: inherit;">=</span> rank_16.cpu().numpy()</span></code></pre></div></div>
 </details>
 </div>
-<div id="cf8a8f7b" class="cell">
+<div id="b36e504a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1">fig <span class="op" style="color: #5E5E5E;
@@ -9690,7 +9690,7 @@ Now we have a curve <img src="https://latex.codecogs.com/png.latex?%5Cgamma%20(t
 <p>I think I will use a <img src="https://latex.codecogs.com/png.latex?2%20%5Ctimes%20n"> matrix to represent the points. I believe this will make it easier to perform OPA. However, I can always switch between the two if needed.</p>
 <section id="part-1-projection-onto-preshape-sphere" class="level3">
 <h3 class="anchored" data-anchor-id="part-1-projection-onto-preshape-sphere">Part 1: Projection onto Preshape Sphere</h3>
-<div id="2b3ba4cb" class="cell">
+<div id="0afa1302" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -9705,7 +9705,7 @@ background-color: null;
 font-style: inherit;">as</span> plt</span></code></pre></div></div>
 </details>
 </div>
-<div id="c50c0a2e" class="cell">
+<div id="4aaaf4cb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="kw" style="color: #003B4F;
@@ -9860,7 +9860,7 @@ font-style: inherit;">return</span> X</span></code></pre></div></div>
 </details>
 </div>
 <p>Testing preshape projection</p>
-<div id="801007cb" class="cell">
+<div id="cca18e11" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1">fig, (ax1, ax2) <span class="op" style="color: #5E5E5E;
@@ -10004,7 +10004,7 @@ font-style: inherit;">"After preshape projection"</span>)</span>
 </section>
 <section id="part-2-ordinary-procrustes-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-ordinary-procrustes-analysis">Part 2: Ordinary Procrustes Analysis</h3>
-<div id="8f1d2bfb" class="cell">
+<div id="c283a108" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="kw" style="color: #003B4F;
@@ -10033,7 +10033,7 @@ font-style: inherit;">@</span> preshape</span></code></pre></div></div>
 </details>
 </div>
 <p>Testing OPA</p>
-<div id="fe6158d9" class="cell">
+<div id="7ceb97f7" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">X <span class="op" style="color: #5E5E5E;
@@ -10163,7 +10163,7 @@ font-style: inherit;">"After OPA"</span>)</span></code></pre></div></div>
 <section id="part-3-exp-map" class="level3">
 <h3 class="anchored" data-anchor-id="part-3-exp-map">Part 3: Exp Map</h3>
 <p>Hold on, if <img src="https://latex.codecogs.com/png.latex?p"> is a point on the d sphere, <img src="https://latex.codecogs.com/png.latex?p%20%5Cin%20S%5Ed%20%5Csubset%20R%5E%7Bd+1%7D">, and <img src="https://latex.codecogs.com/png.latex?v"> is a tangent vector to <img src="https://latex.codecogs.com/png.latex?p">, then <img src="https://latex.codecogs.com/png.latex?v%20%5Cin%20R%5Ed">, since $ S^d $ is a <img src="https://latex.codecogs.com/png.latex?d">-dimensional manifold. How do I add <img src="https://latex.codecogs.com/png.latex?%5C~v%20%5Csin%20%5Ctheta"> to <img src="https://latex.codecogs.com/png.latex?p%20%5Ccos%20%5Ctheta">? Actually, I think I’m over thinking this. The tangent space is a <img src="https://latex.codecogs.com/png.latex?d">-dimensional space, but it’s basis vectors are in <img src="https://latex.codecogs.com/png.latex?R%5E%7Bd+1%7D">. The tangent space to a point <img src="https://latex.codecogs.com/png.latex?p"> on our shape manifod should just be <img src="https://latex.codecogs.com/png.latex?%5C%7Bv%20%5Cin%20R%5E%7Bd+1%7D:%20%3Cp,v%3E%20=%200%5C%7D"></p>
-<div id="20a464b5" class="cell">
+<div id="c7faa033" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="kw" style="color: #003B4F;
@@ -10233,7 +10233,7 @@ font-weight: bold;
 font-style: inherit;">return</span> q</span></code></pre></div></div>
 </details>
 </div>
-<div id="5964f48d" class="cell">
+<div id="61844a9b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
@@ -10266,7 +10266,7 @@ font-style: inherit;">0</span>])</span>
 <p><strong>Note</strong> In practice, I found that I needed to normalize both <img src="https://latex.codecogs.com/png.latex?p"> and <img src="https://latex.codecogs.com/png.latex?q">, else rounding errors would compound and closeness assertions would fail.</p>
 <p>We only need to be careful about the case when <img src="https://latex.codecogs.com/png.latex?p"> and <img src="https://latex.codecogs.com/png.latex?q"> are parallel. If this is the case, <img src="https://latex.codecogs.com/png.latex?%7Cq_%5Cperp%7C%20=%200"> and we get a nan doing division. This is less than ideal. There is, however, an easy fix. If <img src="https://latex.codecogs.com/png.latex?p"> and <img src="https://latex.codecogs.com/png.latex?q"> are parallel, then <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%20%5Cpi"> or <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%200">. Either way, we return</p>
 <p><img src="https://latex.codecogs.com/png.latex?%0Av%20=%20%5Cleft%5B%20%5Cbegin%7Barray%7D%7Bcc%7D%0A%20%20%20%20%5Ctheta%20%5C%5C%0A%20%20%20%200%20%5C%5C%0A%20%20%20%20%5Cvdots%20%5C%5C%0A%20%20%20%200%0A%5Cend%7Barray%7D%0A%5Cright%5D.%0A"> If <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20%20=%200">, we don’t move anywhere. If <img src="https://latex.codecogs.com/png.latex?%5Ctheta%20=%20%5Cpi">, then moving <img src="https://latex.codecogs.com/png.latex?%5Cpi"> in <em>any</em> direction gets us to the opposite side of the sphere.</p>
-<div id="24416723" class="cell">
+<div id="ae67ac66" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><span class="kw" style="color: #003B4F;
@@ -10438,7 +10438,7 @@ font-style: inherit;">/</span> q_o_norm).reshape(og_shape)</span></code></pre></
 <section id="part-5-gradient-descent-frechet-mean-estimator" class="level3">
 <h3 class="anchored" data-anchor-id="part-5-gradient-descent-frechet-mean-estimator">Part 5: Gradient Descent Frechet Mean Estimator</h3>
 <p>So, we are trying to estimate the “average” shape out of N shape by finding the point on the shape sphere that minimizes squared geodesic distance between all the shapes. I’m also going to log the losses at each step to make sure my SGD alg is actually, well, descending.</p>
-<div id="eb835766" class="cell">
+<div id="cf19588e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><span class="kw" style="color: #003B4F;
@@ -10624,7 +10624,7 @@ font-style: inherit;">return</span> mu , np.array(losses)</span></code></pre></d
 <p>To perform appr. PGA, we need to 1. Find the Frechet mean <img src="https://latex.codecogs.com/png.latex?%5Cmu"> 2. Compute the Log map from the mean to all data pounts <img src="https://latex.codecogs.com/png.latex?u_i%20=%20%5Ctext%7BLog%7D_%5Cmu%20x_i,%20U_%7Bi%5Ccdot%7D%20=%20u_i"> 3. Perform simple PCA in this tangent space:</p>
 <pre><code>a. $\Sigma = \frac{1}{N-1} U U^T$
 b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg.eig does this for us!)</code></pre>
-<div id="f1392c27" class="cell">
+<div id="93fa9358" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><span class="kw" style="color: #003B4F;
@@ -10757,7 +10757,7 @@ font-style: inherit;">return</span> V.T, eigvalues, CoVar</span></code></pre></d
 <h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
 <section id="experiment-1-triangles" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-1-triangles">Experiment 1: Triangles</h3>
-<div id="0b95e604" class="cell">
+<div id="d248ab66" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><span class="kw" style="color: #003B4F;
@@ -10788,7 +10788,7 @@ font-weight: bold;
 font-style: inherit;">return</span> np.mean(losses)</span></code></pre></div></div>
 </details>
 </div>
-<div id="bd6bb729" class="cell">
+<div id="1d5f1ecf" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><span class="co" style="color: #5E5E5E;
@@ -11134,7 +11134,7 @@ font-style: inherit;">None</span></span>
 <span id="cb14-56">    )</span></code></pre></div></div>
 </details>
 </div>
-<div id="0832848e" class="cell">
+<div id="d3fb404a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1">mean, losses <span class="op" style="color: #5E5E5E;
@@ -11174,7 +11174,7 @@ font-style: inherit;">"</span>)</span>
 <p>I was also worried becuase it seemed like the mean triangle always ended up really close to <img src="https://latex.codecogs.com/png.latex?%5Cmu_1">, but this souldn’t be suprising, since using OPA makes our shapes rotationally invarient!</p>
 <section id="geodesic" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic">Geodesic</h4>
-<div id="8bf91feb" class="cell">
+<div id="667bbada" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><span class="co" style="color: #5E5E5E;
@@ -11323,7 +11323,7 @@ font-style: inherit;">"Start and End Triangles with Geodesic"</span>)</span></co
 </section>
 <section id="plots" class="level4">
 <h4 class="anchored" data-anchor-id="plots">Plots</h4>
-<div id="0b08b8b8" class="cell">
+<div id="74e455fa" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><span class="co" style="color: #5E5E5E;
@@ -11440,7 +11440,7 @@ font-style: inherit;">"Preshapes Aligned to Frechet Mean"</span>)</span></code><
 </section>
 <section id="modes-of-variation" class="level4">
 <h4 class="anchored" data-anchor-id="modes-of-variation">Modes of Variation</h4>
-<div id="07b93865" class="cell">
+<div id="9a1541f6" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><span class="co" style="color: #5E5E5E;
@@ -11654,7 +11654,7 @@ font-style: inherit;">"</span>)</span>
 </section>
 <section id="experiment-2-corpora-callosa" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-2-corpora-callosa">Experiment 2: Corpora Callosa</h3>
-<div id="312a133d" class="cell">
+<div id="200fafe0" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><span class="co" style="color: #5E5E5E;
@@ -11750,7 +11750,7 @@ background-color: null;
 font-style: inherit;"># plt.scatter(X[0,:], X[1,:])</span></span></code></pre></div></div>
 </details>
 </div>
-<div id="ece18743" class="cell">
+<div id="8b742282" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1">X <span class="op" style="color: #5E5E5E;
@@ -11760,7 +11760,7 @@ font-style: inherit;">=</span> project_to_preshape_sphere(shapes)</span></code><
 </div>
 <section id="geodesic-between-two-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic-between-two-shapes">Geodesic Between Two Shapes</h4>
-<div id="6e0aff2d" class="cell">
+<div id="abae09e5" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1">C_1idx <span class="op" style="color: #5E5E5E;
@@ -11896,7 +11896,7 @@ font-style: inherit;">"Start and End CCs with Geodesic"</span>)</span></code></p
 </section>
 <section id="scattering-all-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="scattering-all-shapes">Scattering All shapes</h4>
-<div id="a1ee6c07" class="cell">
+<div id="95deff26" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1">fig, (ax1, ax2) <span class="op" style="color: #5E5E5E;
@@ -12005,7 +12005,7 @@ font-style: inherit;">=</span> ax2)</span></code></pre></div></div>
 </section>
 <section id="pga" class="level4">
 <h4 class="anchored" data-anchor-id="pga">PGA</h4>
-<div id="69a93e36" class="cell">
+<div id="dbf9b208" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1">V, Vars, _ <span class="op" style="color: #5E5E5E;
@@ -12220,7 +12220,7 @@ font-style: inherit;">5</span>)</span>
 <li><p>What is the image of a latitude line, i.e., a circle formed by intersection with a horizontal plane (<img src="https://latex.codecogs.com/png.latex?z%20=%20%5Cmathrm%7Bconst.%7D">)? Plot several images of latitude lines in the plane.</p></li>
 <li><p>What is the image of an arbitrary great circle (one that is {} a longitudinal line or the equator)? Again, plot several in the plane.</p></li>
 </ol>
-<div id="4483aedf" class="cell">
+<div id="f36537ff" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><span class="im" style="color: #00769E;
@@ -12277,7 +12277,7 @@ font-style: inherit;">return</span> X, Y</span></code></pre></div></div>
 <section id="solution-for-part-a" class="level3">
 <h3 class="anchored" data-anchor-id="solution-for-part-a">Solution for part <strong>a</strong>:</h3>
 <p>Longitudinal lines on the sphere are projected onto the <img src="https://latex.codecogs.com/png.latex?X-Y"> plane as straight lines going through the origin of infinite length.</p>
-<div id="5bbd6355" class="cell">
+<div id="2cd5e189" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><span class="co" style="color: #5E5E5E;
@@ -12345,7 +12345,7 @@ background-color: null;
 font-style: inherit;">1</span>)</span></code></pre></div></div>
 </details>
 </div>
-<div id="62b40f33" class="cell">
+<div id="64a0a702" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><span class="im" style="color: #00769E;
@@ -12355,7 +12355,7 @@ background-color: null;
 font-style: inherit;">as</span> plt</span></code></pre></div></div>
 </details>
 </div>
-<div id="8d20b736" class="cell">
+<div id="c6daa643" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><span class="co" style="color: #5E5E5E;
@@ -12714,7 +12714,7 @@ font-style: inherit;">False</span>)</span></code></pre></div></div>
 <section id="solution-to-part-b" class="level3">
 <h3 class="anchored" data-anchor-id="solution-to-part-b">Solution to part <strong>b</strong></h3>
 <p>Latitudinal lines will map onto the <img src="https://latex.codecogs.com/png.latex?X-Y"> plane as circles centered at the origin.</p>
-<div id="bad80943" class="cell">
+<div id="9ebf69ba" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1">phis <span class="op" style="color: #5E5E5E;
@@ -13093,7 +13093,7 @@ font-style: inherit;">False</span>)</span></code></pre></div></div>
 <section id="solution-to-part-c" class="level3">
 <h3 class="anchored" data-anchor-id="solution-to-part-c">Solution to part <strong>c</strong>:</h3>
 <p>The projection of an arbitrary great circle would look like an elipse as long as the great circle is not a longitudinal line.</p>
-<div id="2bf48239" class="cell">
+<div id="e3ff1fe6" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><span class="co" style="color: #5E5E5E;
@@ -13668,7 +13668,7 @@ font-style: inherit;">False</span>)</span></code></pre></div></div>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="bbfd8ca0" class="cell">
+<div id="d1391b70" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><span class="co" style="color: #5E5E5E;
@@ -14160,7 +14160,7 @@ font-style: inherit;">False</span>)</span></code></pre></div></div>
 <h3 class="anchored" data-anchor-id="problem-5">Problem 5:</h3>
 <p>A. I think this is really cool. If my hunch is correct. Distance from the equator is pi /2 - distance from a pole. Since we have a unit sphere, distance = angle, so we can compute the cosine distance from the north pole, take the norm of pi/2 - that, and viola, we have distance from the equator. This idea came from this facial recognition model: https://arxiv.org/pdf/1801.07698.</p>
 <p>As d increases, our points get closer and closer to the equator of our d-sphere. This means that any point form a uniform distribution tends to get further and further away from the poles. I think this is realated to why the probablility of a point being close to the perimiter of a d-cube gets astronomically high as d increases. The result should be the same if you use a different great circle. This is because we can perform a linear transformation on a hypersphere to make its great circle the equator. Then we could compute distance in the same way and see that our points end up still tending toward the equator.</p>
-<div id="c1371e14" class="cell">
+<div id="0428bb8b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><span class="im" style="color: #00769E;
@@ -14195,7 +14195,7 @@ font-style: inherit;">1</span>))</span></code></pre></div></div>
 </details>
 </div>
 <pre><code>array([ 0.30471708, -1.03998411,  0.7504512 ])</code></pre>
-<div id="17ec8916" class="cell">
+<div id="f2528e51" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1">fig, axes <span class="op" style="color: #5E5E5E;
@@ -14333,7 +14333,7 @@ font-style: inherit;">"</span></span>
 </figure>
 </div>
 <p>B. These angluar distances approach pi/2 as d increases. This means that uniformly distributed points tend to be at right angles from eachother. I guess this makes sence, since in order to have an angle closer/further than pi/2, you need all the other dimensions to be closer to zero. The probability of that happening over d+1 uniform standard randoms gets so so low.</p>
-<div id="a2651e58" class="cell">
+<div id="f353fd04" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11" style="background: #f1f3f5;"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1">fig, axs <span class="op" style="color: #5E5E5E;

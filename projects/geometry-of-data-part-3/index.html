@@ -236,7 +236,7 @@ window.Quarto = {
 <section id="part-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
 <p>Sample ellipse:</p>
-<div id="be0f46a8" class="cell">
+<div id="187e13f7" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## sampling an elipse</span></span>
@@ -255,7 +255,7 @@ window.Quarto = {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ellipse.get_ellipse(a = 12, b = 6, row = 48, col = 35, theta = 0).dtype</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="03e3ae6a" class="cell">
+<div id="71a8b42e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## gernerate data</span></span>
@@ -282,7 +282,7 @@ window.Quarto = {
 </section>
 <section id="c.-pca" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca">C. PCA</h4>
-<div id="1ca9bdfc" class="cell">
+<div id="8127da97" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
@@ -293,7 +293,7 @@ window.Quarto = {
 </details>
 </div>
 <pre><code>(1000, 4096)</code></pre>
-<div id="b78ade2e" class="cell">
+<div id="fbc4e524" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> pca.singular_values_.size</span>
@@ -309,7 +309,7 @@ window.Quarto = {
 </section>
 <section id="d.-plotting-pca" class="level4">
 <h4 class="anchored" data-anchor-id="d.-plotting-pca">D. Plotting PCA</h4>
-<div id="4d40eaff" class="cell">
+<div id="cfd90873" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
@@ -333,7 +333,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>Wow, this shape is fascinating! I absolutely didn’t excpet the data to look like this. This shape looks like a warped sheet of paper (lending support to my hypothesis that the intrisic dimensionality of the data is 2) which comes together to 4 “corners”. I wonder if the data points here represent the elipses with centers at the “corners” at the possible combinations of x and y values. Let’s find out.</p>
-<div id="cbf00075" class="cell">
+<div id="1703185c" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig_1 <span class="op">=</span> px.scatter_3d(df, x<span class="op">=</span><span class="st">"PC_1"</span>, y<span class="op">=</span><span class="st">"PC_2"</span>, z<span class="op">=</span><span class="st">"PC_3"</span>, color<span class="op">=</span><span class="st">"rows"</span>)</span>
@@ -348,7 +348,7 @@ window.Quarto = {
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a1f54a82" class="cell">
+<div id="8dcf3261" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig_2 <span class="op">=</span> px.scatter_3d(df, x<span class="op">=</span><span class="st">"PC_1"</span>, y<span class="op">=</span><span class="st">"PC_2"</span>, z<span class="op">=</span><span class="st">"PC_3"</span>, color<span class="op">=</span><span class="st">"cols"</span>)</span>
@@ -375,7 +375,7 @@ window.Quarto = {
 </section>
 <section id="b.-isomap" class="level4">
 <h4 class="anchored" data-anchor-id="b.-isomap">B. IsoMap</h4>
-<div id="55ff8599" class="cell">
+<div id="23c44a17" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> Isomap</span>
@@ -406,7 +406,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="c.-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="c.-isomap-visualization">C. IsoMap Visualization</h4>
-<div id="3beeba2d" class="cell">
+<div id="8d4603c0" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly.subplots <span class="im">import</span> make_subplots</span>
@@ -428,7 +428,7 @@ Number of negative eigenvalues: 221</code></pre>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a20480d9" class="cell">
+<div id="1b4551fe" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>px.scatter(</span>
@@ -450,7 +450,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="d.-3d-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="d.-3d-isomap-visualization">D. 3D IsoMap Visualization</h4>
-<div id="92dea75e" class="cell">
+<div id="4b1afc20" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_3d(</span>
@@ -476,7 +476,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<div id="9a02a9c9" class="cell">
+<div id="039b2cda" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -588,7 +588,7 @@ Number of negative eigenvalues: 221</code></pre>
 </details>
 </div>
 <pre><code>Device: mps</code></pre>
-<div id="a2d8e068" class="cell">
+<div id="ef351822" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">2</span> <span class="co"># set your latent dimension here</span></span>
@@ -608,7 +608,7 @@ Number of negative eigenvalues: 221</code></pre>
 <pre><code>Loaded checkpoint</code></pre>
 <section id="a.-evaluation-of-reconstruction" class="level4">
 <h4 class="anchored" data-anchor-id="a.-evaluation-of-reconstruction">A. Evaluation of Reconstruction</h4>
-<div id="b751568a" class="cell">
+<div id="29c75de2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making testing data</span></span>
@@ -669,7 +669,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="b.-increasing-latent-dim" class="level4">
 <h4 class="anchored" data-anchor-id="b.-increasing-latent-dim">B. Increasing Latent Dim</h4>
-<div id="e6183383" class="cell">
+<div id="49a7db8e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convAE16 = ConvolutionalAutoencoder(num_channels, latent_dim)</span></span>
@@ -679,7 +679,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convAE16.to(device)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="a6f977a6" class="cell">
+<div id="a128bc52" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">16</span> <span class="co"># set your latent dimension here</span></span>
@@ -699,7 +699,7 @@ Number of negative eigenvalues: 221</code></pre>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="5511c55b" class="cell">
+<div id="8760983e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reconstructing with the auto encoder</span></span>
@@ -738,7 +738,7 @@ Number of negative eigenvalues: 221</code></pre>
 <section id="c.-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca-in-latent-space">C. PCA in Latent Space</h4>
 <p><em>Note:</em> I’m running PCA on the embeddings from the training data, since the question did not specify the test dataset.</p>
-<div id="7d4d3029" class="cell">
+<div id="170d6df4" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> convAE16.encoder(torch.from_numpy(data).<span class="bu">type</span>(torch.float32).to(device).unsqueeze(<span class="dv">1</span>)).squeeze().detach().cpu().numpy()</span>
@@ -765,7 +765,7 @@ Number of negative eigenvalues: 221</code></pre>
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="a48738bf" class="cell">
+<div id="e02c42cb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> convAE16.encoder(torch.from_numpy(data).<span class="bu">type</span>(torch.float32).to(device).unsqueeze(<span class="dv">1</span>)).squeeze().detach().cpu().numpy()</span>
@@ -796,13 +796,13 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="d.-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d.-immersion-test">D. Immersion Test</h4>
-<div id="3bef958e" class="cell">
+<div id="3e7dac05" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a function that computes the rank of the Jacobian at any given input</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="2e81e1f4" class="cell">
+<div id="8e3c0ead" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.func <span class="im">import</span> jacfwd</span>
@@ -849,7 +849,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>rank_16_a <span class="op">=</span> rank_16.cpu().numpy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="612fd18e" class="cell">
+<div id="271331de" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.histogram(rank_2_a, title<span class="op">=</span><span class="st">"Histogram of Jacobian Rank for latent_dim = 2"</span>)</span>
@@ -878,7 +878,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="part-4" class="level3">
 <h3 class="anchored" data-anchor-id="part-4">Part 4</h3>
-<div id="64a98dca" class="cell">
+<div id="6255d281" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
@@ -903,7 +903,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="b-eigen-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="b-eigen-analysis">2.B Eigen Analysis</h4>
-<div id="a4bd873f" class="cell">
+<div id="130360a1" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
@@ -968,7 +968,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="d-3d-isomap-scatter" class="level4">
 <h4 class="anchored" data-anchor-id="d-3d-isomap-scatter">2.D 3D Isomap Scatter</h4>
-<div id="e2bee319" class="cell">
+<div id="e93875fb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
@@ -982,7 +982,7 @@ Number of negative eigenvalues: 221</code></pre>
 </details>
 </div>
 <pre><code>Loaded transformed teapots</code></pre>
-<div id="e035f573" class="cell">
+<div id="77548126" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(transformed_teapots, columns<span class="op">=</span>[<span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>])</span>
@@ -1006,7 +1006,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="a-small-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="a-small-autoencoder">3.A Small Autoencoder</h4>
-<div id="7475a3a3" class="cell">
+<div id="3c568d03" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
@@ -1025,7 +1025,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>train_loader <span class="op">=</span> DataLoader(train_data, batch_size <span class="op">=</span> batch_size, shuffle <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="1771377a" class="cell">
+<div id="96458126" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(N)</span></span>
@@ -1042,7 +1042,7 @@ Number of negative eigenvalues: 221</code></pre>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="1c4d2cb6" class="cell">
+<div id="d44b792b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting grids</span></span>
@@ -1071,7 +1071,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>pca.fit(flat_teapots)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="d755cd05" class="cell">
+<div id="11441f60" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pca.mean_</span>
@@ -1107,7 +1107,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="b-larger-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="b-larger-autoencoder">3.B Larger Autoencoder</h4>
-<div id="43dd5b7e" class="cell">
+<div id="67bf0ace" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(N)</span></span>
@@ -1124,7 +1124,7 @@ Number of negative eigenvalues: 221</code></pre>
 </details>
 </div>
 <pre><code>Loaded checkpoint</code></pre>
-<div id="4f344c21" class="cell">
+<div id="469de214" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting grids</span></span>
@@ -1153,7 +1153,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>pca.fit(flat_teapots)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="d9da22b4" class="cell">
+<div id="7c0413b2" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pca.mean_</span>
@@ -1188,7 +1188,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="c-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c-pca-in-latent-space">3.C PCA in Latent Space</h4>
-<div id="f7efa583" class="cell">
+<div id="adbd0562" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> teapot_AE16.encoder(teapots[:<span class="dv">1000</span>].to(device)).squeeze().detach().cpu().numpy()</span>
@@ -1219,7 +1219,7 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="d-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d-immersion-test">3.D Immersion Test</h4>
-<div id="4757a4d8" class="cell">
+<div id="6734ac67" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>latents_4 <span class="op">=</span> teapot_AE4.encoder(viz_sample.to(device))</span>
@@ -1234,7 +1234,7 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>rank_16_a <span class="op">=</span> rank_16.cpu().numpy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="cf8a8f7b" class="cell">
+<div id="b36e504a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.histogram(rank_4_a, title<span class="op">=</span><span class="st">"Histogram of Jacobian Rank for latent_dim = 4"</span>)</span>

@@ -263,7 +263,7 @@ window.Quarto = {
 <li><p>What is the image of a latitude line, i.e., a circle formed by intersection with a horizontal plane (<span class="math inline">\(z = \mathrm{const.}\)</span>)? Plot several images of latitude lines in the plane.</p></li>
 <li><p>What is the image of an arbitrary great circle (one that is {} a longitudinal line or the equator)? Again, plot several in the plane.</p></li>
 </ol>
-<div id="4483aedf" class="cell">
+<div id="f36537ff" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -280,7 +280,7 @@ window.Quarto = {
 <section id="solution-for-part-a" class="level3">
 <h3 class="anchored" data-anchor-id="solution-for-part-a">Solution for part <strong>a</strong>:</h3>
 <p>Longitudinal lines on the sphere are projected onto the <span class="math inline">\(X-Y\)</span> plane as straight lines going through the origin of infinite length.</p>
-<div id="5bbd6355" class="cell">
+<div id="2cd5e189" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## plotting some great circles through the sphere, then the projection on the plane</span></span>
@@ -296,13 +296,13 @@ window.Quarto = {
 <span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>circles <span class="op">=</span> np.stack(mat, axis<span class="op">=</span> <span class="op">-</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="62b40f33" class="cell">
+<div id="64a0a702" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="8d20b736" class="cell">
+<div id="c6daa643" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do plotting</span></span>
@@ -397,7 +397,7 @@ window.Quarto = {
 <section id="solution-to-part-b" class="level3">
 <h3 class="anchored" data-anchor-id="solution-to-part-b">Solution to part <strong>b</strong></h3>
 <p>Latitudinal lines will map onto the <span class="math inline">\(X-Y\)</span> plane as circles centered at the origin.</p>
-<div id="bad80943" class="cell">
+<div id="9ebf69ba" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>phis <span class="op">=</span> np.array([<span class="fl">.6</span>,<span class="dv">1</span>, <span class="dv">3</span> <span class="op">*</span> np.pi <span class="op">/</span> <span class="dv">4</span>, <span class="dv">3</span> <span class="op">*</span> np.pi <span class="op">/</span> <span class="dv">2</span>])</span>
@@ -494,7 +494,7 @@ window.Quarto = {
 <section id="solution-to-part-c" class="level3">
 <h3 class="anchored" data-anchor-id="solution-to-part-c">Solution to part <strong>c</strong>:</h3>
 <p>The projection of an arbitrary great circle would look like an elipse as long as the great circle is not a longitudinal line.</p>
-<div id="2bf48239" class="cell">
+<div id="e3ff1fe6" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do plotting</span></span>
@@ -667,7 +667,7 @@ window.Quarto = {
 <figcaption>png</figcaption>
 </figure>
 </div>
-<div id="bbfd8ca0" class="cell">
+<div id="d1391b70" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># do plotting</span></span>
@@ -819,7 +819,7 @@ window.Quarto = {
 <h3 class="anchored" data-anchor-id="problem-5">Problem 5:</h3>
 <p>A. I think this is really cool. If my hunch is correct. Distance from the equator is pi /2 - distance from a pole. Since we have a unit sphere, distance = angle, so we can compute the cosine distance from the north pole, take the norm of pi/2 - that, and viola, we have distance from the equator. This idea came from this facial recognition model: https://arxiv.org/pdf/1801.07698.</p>
 <p>As d increases, our points get closer and closer to the equator of our d-sphere. This means that any point form a uniform distribution tends to get further and further away from the poles. I think this is realated to why the probablility of a point being close to the perimiter of a d-cube gets astronomically high as d increases. The result should be the same if you use a different great circle. This is because we can perform a linear transformation on a hypersphere to make its great circle the equator. Then we could compute distance in the same way and see that our points end up still tending toward the equator.</p>
-<div id="c1371e14" class="cell">
+<div id="0428bb8b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
@@ -830,7 +830,7 @@ window.Quarto = {
 </details>
 </div>
 <pre><code>array([ 0.30471708, -1.03998411,  0.7504512 ])</code></pre>
-<div id="17ec8916" class="cell">
+<div id="f2528e51" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>fig, axes <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">4</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>
@@ -860,7 +860,7 @@ window.Quarto = {
 </figure>
 </div>
 <p>B. These angluar distances approach pi/2 as d increases. This means that uniformly distributed points tend to be at right angles from eachother. I guess this makes sence, since in order to have an angle closer/further than pi/2, you need all the other dimensions to be closer to zero. The probability of that happening over d+1 uniform standard randoms gets so so low.</p>
-<div id="a2651e58" class="cell">
+<div id="f353fd04" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">5</span>, figsize<span class="op">=</span>(<span class="dv">20</span>, <span class="dv">4</span>), sharey<span class="op">=</span><span class="va">True</span>)</span>

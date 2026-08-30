@@ -373,14 +373,14 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <p>I think I will use a <span class="math inline">\(2 \times n\)</span> matrix to represent the points. I believe this will make it easier to perform OPA. However, I can always switch between the two if needed.</p>
 <section id="part-1-projection-onto-preshape-sphere" class="level3">
 <h3 class="anchored" data-anchor-id="part-1-projection-onto-preshape-sphere">Part 1: Projection onto Preshape Sphere</h3>
-<div id="2b3ba4cb" class="cell">
+<div id="0afa1302" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="c50c0a2e" class="cell">
+<div id="4aaaf4cb" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> project_to_preshape_sphere(X: np.ndarray):</span>
@@ -405,7 +405,7 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 </details>
 </div>
 <p>Testing preshape projection</p>
-<div id="801007cb" class="cell">
+<div id="cca18e11" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
@@ -435,7 +435,7 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 </section>
 <section id="part-2-ordinary-procrustes-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-ordinary-procrustes-analysis">Part 2: Ordinary Procrustes Analysis</h3>
-<div id="8f1d2bfb" class="cell">
+<div id="c283a108" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> OPA(target, preshape):</span>
@@ -446,7 +446,7 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 </details>
 </div>
 <p>Testing OPA</p>
-<div id="fe6158d9" class="cell">
+<div id="7ceb97f7" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randint(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, (<span class="dv">2</span>, <span class="dv">100</span>))</span>
@@ -488,7 +488,7 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <section id="part-3-exp-map" class="level3">
 <h3 class="anchored" data-anchor-id="part-3-exp-map">Part 3: Exp Map</h3>
 <p>Hold on, if <span class="math inline">\(p\)</span> is a point on the d sphere, <span class="math inline">\(p \in S^d \subset R^{d+1}\)</span>, and <span class="math inline">\(v\)</span> is a tangent vector to <span class="math inline">\(p\)</span>, then <span class="math inline">\(v \in R^d\)</span>, since $ S^d $ is a <span class="math inline">\(d\)</span>-dimensional manifold. How do I add <span class="math inline">\(\~v \sin \theta\)</span> to <span class="math inline">\(p \cos \theta\)</span>? Actually, I think I’m over thinking this. The tangent space is a <span class="math inline">\(d\)</span>-dimensional space, but it’s basis vectors are in <span class="math inline">\(R^{d+1}\)</span>. The tangent space to a point <span class="math inline">\(p\)</span> on our shape manifod should just be <span class="math inline">\(\{v \in R^{d+1}: &lt;p,v&gt; = 0\}\)</span></p>
-<div id="20a464b5" class="cell">
+<div id="c7faa033" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> EXP(p, v):</span>
@@ -504,7 +504,7 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="5964f48d" class="cell">
+<div id="61844a9b" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># short test in R^3</span></span>
@@ -531,7 +531,7 @@ v = \left[ \begin{array}{cc}
 \end{array}
 \right].
 \]</span> If <span class="math inline">\(\theta  = 0\)</span>, we don’t move anywhere. If <span class="math inline">\(\theta = \pi\)</span>, then moving <span class="math inline">\(\pi\)</span> in <em>any</em> direction gets us to the opposite side of the sphere.</p>
-<div id="24416723" class="cell">
+<div id="ae67ac66" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> LOG(p, q):</span>
@@ -569,7 +569,7 @@ v = \left[ \begin{array}{cc}
 <section id="part-5-gradient-descent-frechet-mean-estimator" class="level3">
 <h3 class="anchored" data-anchor-id="part-5-gradient-descent-frechet-mean-estimator">Part 5: Gradient Descent Frechet Mean Estimator</h3>
 <p>So, we are trying to estimate the “average” shape out of N shape by finding the point on the shape sphere that minimizes squared geodesic distance between all the shapes. I’m also going to log the losses at each step to make sure my SGD alg is actually, well, descending.</p>
-<div id="eb835766" class="cell">
+<div id="cf19588e" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> frechet_mean_GD(X, starting_indx <span class="op">=</span> <span class="dv">0</span>, verbose <span class="op">=</span> <span class="va">False</span>):</span>
@@ -615,7 +615,7 @@ v = \left[ \begin{array}{cc}
 <p>To perform appr. PGA, we need to 1. Find the Frechet mean <span class="math inline">\(\mu\)</span> 2. Compute the Log map from the mean to all data pounts <span class="math inline">\(u_i = \text{Log}_\mu x_i, U_{i\cdot} = u_i\)</span> 3. Perform simple PCA in this tangent space:</p>
 <pre><code>a. $\Sigma = \frac{1}{N-1} U U^T$
 b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg.eig does this for us!)</code></pre>
-<div id="f1392c27" class="cell">
+<div id="93fa9358" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ApprPGA(X):</span>
@@ -654,7 +654,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
 <section id="experiment-1-triangles" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-1-triangles">Experiment 1: Triangles</h3>
-<div id="0b95e604" class="cell">
+<div id="d248ab66" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mean_shape_loss(mean, X):</span>
@@ -665,7 +665,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.mean(losses)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="bd6bb729" class="cell">
+<div id="1d5f1ecf" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make random triangles</span></span>
@@ -726,7 +726,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="0832848e" class="cell">
+<div id="d3fb404a" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mean, losses <span class="op">=</span> frechet_mean_GD(triangles, starting_indx<span class="op">=</span><span class="dv">3</span>)</span>
@@ -750,7 +750,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <p>I was also worried becuase it seemed like the mean triangle always ended up really close to <span class="math inline">\(\mu_1\)</span>, but this souldn’t be suprising, since using OPA makes our shapes rotationally invarient!</p>
 <section id="geodesic" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic">Geodesic</h4>
-<div id="8bf91feb" class="cell">
+<div id="667bbada" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the starting triangle and the ending triangle to plot the geodesic between them</span></span>
@@ -793,7 +793,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="plots" class="level4">
 <h4 class="anchored" data-anchor-id="plots">Plots</h4>
-<div id="0b08b8b8" class="cell">
+<div id="74e455fa" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raw object data</span></span>
@@ -832,7 +832,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="modes-of-variation" class="level4">
 <h4 class="anchored" data-anchor-id="modes-of-variation">Modes of Variation</h4>
-<div id="07b93865" class="cell">
+<div id="9a1541f6" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(triangles.shape[-2:])</span></span>
@@ -890,7 +890,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="experiment-2-corpora-callosa" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-2-corpora-callosa">Experiment 2: Corpora Callosa</h3>
-<div id="312a133d" class="cell">
+<div id="200fafe0" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## load CC data</span></span>
@@ -915,7 +915,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.scatter(X[0,:], X[1,:])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="ece18743" class="cell">
+<div id="8b742282" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> project_to_preshape_sphere(shapes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -923,7 +923,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </div>
 <section id="geodesic-between-two-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic-between-two-shapes">Geodesic Between Two Shapes</h4>
-<div id="6e0aff2d" class="cell">
+<div id="abae09e5" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>C_1idx <span class="op">=</span> X[:, <span class="dv">1</span>, <span class="dv">2</span>].argmin()</span>
@@ -967,7 +967,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="scattering-all-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="scattering-all-shapes">Scattering All shapes</h4>
-<div id="a1ee6c07" class="cell">
+<div id="95deff26" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
@@ -998,7 +998,7 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="pga" class="level4">
 <h4 class="anchored" data-anchor-id="pga">PGA</h4>
-<div id="69a93e36" class="cell">
+<div id="dbf9b208" class="cell">
 <details class="code-fold">
 <summary>Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>V, Vars, _ <span class="op">=</span> ApprPGA(X)</span>
