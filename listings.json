@@ -1,8 +1,23 @@
 [
   {
+    "listing": "/projects/index.html",
+    "items": [
+      "/projects/geometry-of-data-part-5/index.html",
+      "/projects/geometry-of-data-part-4/index.html",
+      "/projects/geometry-of-data-part-3/index.html",
+      "/projects/geometry-of-data-part-2/index.html",
+      "/projects/geometry-of-data-part-1/index.html"
+    ]
+  },
+  {
     "listing": "/index.html",
     "items": [
-      "/posts/normal-equation/index.html"
+      "/posts/normal-equation/index.html",
+      "/projects/geometry-of-data-part-5/index.html",
+      "/projects/geometry-of-data-part-4/index.html",
+      "/projects/geometry-of-data-part-3/index.html",
+      "/projects/geometry-of-data-part-2/index.html",
+      "/projects/geometry-of-data-part-1/index.html"
     ]
   }
 ]
