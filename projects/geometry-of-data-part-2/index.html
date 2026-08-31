@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -15,10 +15,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -77,10 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f7b739f6d12fe4d49c3e911a2c066b16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-6ac2aec46ad7f46b16024ee4409aa65c.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -110,7 +113,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -188,7 +191,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Geometry of Data: Part 2</h1>
+      <div class="quarto-title-block"><div><h1 class="title">Geometry of Data: Part 2</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
                   <div>
         <div class="description">
           Exercises on geodesics, Riemannian geometry, and shape analysis.
@@ -286,7 +289,9 @@ g^{-1} = \begin{bmatrix}
 <p><span class="math display">\[
 \Gamma ^ 2 _ {1,1} = \frac{1}{2} \left( g^{2,1} \left( \cdots  \right) +  g^{2,2} \left(\frac{\partial g_{1,2}}{\partial \theta} + \frac{\partial g_{1,2}}{\partial \theta}  -\frac{\partial g_{1,1}}{\partial \phi} \right) \right).
 \]</span></p>
-<p>But $ g^{2,1} = 0, = = 0<span class="math inline">\(, so\)</span>$ ^ 2 _ {1,1} = (- ) = $$</p>
+<p>But $ g^{2,1} = 0, = = 0$, so <span class="math display">\[
+\Gamma ^ 2 _ {1,1} = \frac{1}{2}  \cdot  1 \left(-  \frac{\partial \cos^2 (\phi)}{\partial \phi} \right) = \cos \phi \sin \phi
+\]</span></p>
 <p><span class="math display">\[
 \Gamma ^ 1 _ {2,1} = \frac{1}{2} \left( g^{1,1} \left(  \frac{\partial g_{1,1}}{\partial \phi} +  \frac{\partial g_{2,1}}{\partial \theta} - \frac{\partial g_{2,1}}{\partial \theta}    \right) + g^{1,2} (\cdots) \right).
 \]</span></p>
@@ -373,16 +378,16 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <p>I think I will use a <span class="math inline">\(2 \times n\)</span> matrix to represent the points. I believe this will make it easier to perform OPA. However, I can always switch between the two if needed.</p>
 <section id="part-1-projection-onto-preshape-sphere" class="level3">
 <h3 class="anchored" data-anchor-id="part-1-projection-onto-preshape-sphere">Part 1: Projection onto Preshape Sphere</h3>
-<div id="0afa1302" class="cell">
+<div id="6811a6a2" class="cell" data-execution_count="1">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="4aaaf4cb" class="cell">
+<div id="3777d072" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> project_to_preshape_sphere(X: np.ndarray):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># X: d x N</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> X.shape[<span class="op">-</span><span class="dv">1</span>] <span class="op">==</span> <span class="dv">1</span>:</span>
@@ -405,9 +410,9 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 </details>
 </div>
 <p>Testing preshape projection</p>
-<div id="cca18e11" class="cell">
+<div id="09c11e9a" class="cell" data-execution_count="3">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>X_1 <span class="op">=</span> np.array([[<span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>], [<span class="dv">1</span>, <span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>]]) <span class="op">*</span> <span class="dv">5</span><span class="op">+</span> np.array([[<span class="dv">1</span>],[<span class="dv">2</span>]])</span>
@@ -425,19 +430,20 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>ax2.grid()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_25_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-4-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="part-2-ordinary-procrustes-analysis" class="level3">
 <h3 class="anchored" data-anchor-id="part-2-ordinary-procrustes-analysis">Part 2: Ordinary Procrustes Analysis</h3>
-<div id="c283a108" class="cell">
+<div id="34e347e2" class="cell" data-execution_count="4">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> OPA(target, preshape):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># rotate preshape to best align with target</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    U, S, Vt <span class="op">=</span> np.linalg.svd(target <span class="op">@</span> preshape.T)</span>
@@ -446,9 +452,9 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 </details>
 </div>
 <p>Testing OPA</p>
-<div id="7ceb97f7" class="cell">
+<div id="c0cb8a87" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> np.random.randint(<span class="op">-</span><span class="dv">5</span>, <span class="dv">5</span>, (<span class="dv">2</span>, <span class="dv">100</span>))</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
@@ -476,21 +482,22 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>ax2.grid()</span>
 <span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"After OPA"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_29_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Well, that looks great. Even with rotation, translation, and scaling, our points are still mapped to the same point on the pre-shape sphere!</p>
 </section>
 <section id="part-3-exp-map" class="level3">
 <h3 class="anchored" data-anchor-id="part-3-exp-map">Part 3: Exp Map</h3>
 <p>Hold on, if <span class="math inline">\(p\)</span> is a point on the d sphere, <span class="math inline">\(p \in S^d \subset R^{d+1}\)</span>, and <span class="math inline">\(v\)</span> is a tangent vector to <span class="math inline">\(p\)</span>, then <span class="math inline">\(v \in R^d\)</span>, since $ S^d $ is a <span class="math inline">\(d\)</span>-dimensional manifold. How do I add <span class="math inline">\(\~v \sin \theta\)</span> to <span class="math inline">\(p \cos \theta\)</span>? Actually, I think I’m over thinking this. The tangent space is a <span class="math inline">\(d\)</span>-dimensional space, but it’s basis vectors are in <span class="math inline">\(R^{d+1}\)</span>. The tangent space to a point <span class="math inline">\(p\)</span> on our shape manifod should just be <span class="math inline">\(\{v \in R^{d+1}: &lt;p,v&gt; = 0\}\)</span></p>
-<div id="c7faa033" class="cell">
+<div id="40d82d94" class="cell" data-execution_count="6">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> EXP(p, v):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> np.isclose(np.linalg.norm(p), <span class="dv">1</span>), <span class="st">"Starting point p must be on the preshape sphere: it's magnitude should be 1"</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> np.isclose(np.<span class="bu">sum</span>(p <span class="op">*</span> v), <span class="dv">0</span>, atol<span class="op">=</span><span class="fl">1e-7</span>), <span class="pp">ValueError</span>(<span class="st">"p and V must be orthogonal"</span>)   </span>
@@ -504,16 +511,18 @@ Now we have a curve <span class="math inline">\(\gamma (t, 0) = \left[ \begin{ar
 <span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> q</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="61844a9b" class="cell">
+<div id="63f159a5" class="cell" data-execution_count="7">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># short test in R^3</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> np.array([<span class="dv">0</span>,<span class="dv">0</span>,<span class="dv">1</span>])</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>v <span class="op">=</span> np.array([np.pi,<span class="dv">0</span>,<span class="dv">0</span>])</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>EXP(p,v)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>array([ 1.2246468e-16,  0.0000000e+00, -1.0000000e+00])</code></pre>
+</div>
+</div>
 </section>
 <section id="part-4-log-map" class="level3">
 <h3 class="anchored" data-anchor-id="part-4-log-map">Part 4: Log Map</h3>
@@ -531,9 +540,9 @@ v = \left[ \begin{array}{cc}
 \end{array}
 \right].
 \]</span> If <span class="math inline">\(\theta  = 0\)</span>, we don’t move anywhere. If <span class="math inline">\(\theta = \pi\)</span>, then moving <span class="math inline">\(\pi\)</span> in <em>any</em> direction gets us to the opposite side of the sphere.</p>
-<div id="ae67ac66" class="cell">
+<div id="05c09abe" class="cell" data-execution_count="8">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> LOG(p, q):</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> OPA(p, q)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>    og_shape <span class="op">=</span> p.shape</span>
@@ -569,9 +578,9 @@ v = \left[ \begin{array}{cc}
 <section id="part-5-gradient-descent-frechet-mean-estimator" class="level3">
 <h3 class="anchored" data-anchor-id="part-5-gradient-descent-frechet-mean-estimator">Part 5: Gradient Descent Frechet Mean Estimator</h3>
 <p>So, we are trying to estimate the “average” shape out of N shape by finding the point on the shape sphere that minimizes squared geodesic distance between all the shapes. I’m also going to log the losses at each step to make sure my SGD alg is actually, well, descending.</p>
-<div id="cf19588e" class="cell">
+<div id="97bcee40" class="cell" data-execution_count="9">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> frechet_mean_GD(X, starting_indx <span class="op">=</span> <span class="dv">0</span>, verbose <span class="op">=</span> <span class="va">False</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># hold on, should we do OPA before the Log map??? A: Yes</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> <span class="bu">len</span>(X.shape) <span class="op">==</span> <span class="dv">3</span>, <span class="st">"Can only find the mean of multiple shapes, make sure the array of shapes is size N x K x D"</span></span>
@@ -615,9 +624,9 @@ v = \left[ \begin{array}{cc}
 <p>To perform appr. PGA, we need to 1. Find the Frechet mean <span class="math inline">\(\mu\)</span> 2. Compute the Log map from the mean to all data pounts <span class="math inline">\(u_i = \text{Log}_\mu x_i, U_{i\cdot} = u_i\)</span> 3. Perform simple PCA in this tangent space:</p>
 <pre><code>a. $\Sigma = \frac{1}{N-1} U U^T$
 b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg.eig does this for us!)</code></pre>
-<div id="93fa9358" class="cell">
+<div id="8bdd5988" class="cell" data-execution_count="10">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> ApprPGA(X):</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    og_shape <span class="op">=</span> X.shape</span>
@@ -654,9 +663,9 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <h2 class="anchored" data-anchor-id="experiments">Experiments</h2>
 <section id="experiment-1-triangles" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-1-triangles">Experiment 1: Triangles</h3>
-<div id="d248ab66" class="cell">
+<div id="5d0f07c8" class="cell" data-execution_count="11">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> mean_shape_loss(mean, X):</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    losses <span class="op">=</span> []</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> x <span class="kw">in</span> X: </span>
@@ -665,9 +674,9 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> np.mean(losses)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="1d5f1ecf" class="cell">
+<div id="71573d5b" class="cell" data-execution_count="12">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co">#make random triangles</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">100</span> <span class="co"># making 100 random triangles with the expectation that half of them will be thrown out by a negative-det R</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>p0 <span class="op">=</span> np.repeat(np.expand_dims([<span class="dv">1</span>,<span class="dv">0</span>], <span class="dv">0</span>), N, axis<span class="op">=</span><span class="dv">0</span>)</span>
@@ -723,12 +732,13 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb14-53"><a href="#cb14-53" aria-hidden="true" tabindex="-1"></a>                T[<span class="dv">0</span>, :], T[<span class="dv">1</span>, :],</span>
 <span id="cb14-54"><a href="#cb14-54" aria-hidden="true" tabindex="-1"></a>                s <span class="op">=</span> s,</span>
 <span id="cb14-55"><a href="#cb14-55" aria-hidden="true" tabindex="-1"></a>                color <span class="op">=</span> color <span class="cf">if</span> color <span class="kw">is</span> <span class="kw">not</span> <span class="va">None</span> <span class="cf">else</span> <span class="va">None</span></span>
-<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    )</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-56"><a href="#cb14-56" aria-hidden="true" tabindex="-1"></a>    )</span>
+<span id="cb14-57"><a href="#cb14-57" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="d3fb404a" class="cell">
+<div id="175258a2" class="cell" data-execution_count="13">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>mean, losses <span class="op">=</span> frechet_mean_GD(triangles, starting_indx<span class="op">=</span><span class="dv">3</span>)</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -739,20 +749,21 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="ss">f"Manifold distance Loss: </span><span class="sc">{</span>loss<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_48_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>This is really good. Even when I start with a “flat” triangle, my gradient descent algorithm finds a triangle that looks like the mean! I was worried at first, becuase I would see that my GD algorithm would converge afer one step, which seemed too good to be true. But I guess it is just very easy to find the mean.</p>
 <p>I was also worried becuase it seemed like the mean triangle always ended up really close to <span class="math inline">\(\mu_1\)</span>, but this souldn’t be suprising, since using OPA makes our shapes rotationally invarient!</p>
 <section id="geodesic" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic">Geodesic</h4>
-<div id="667bbada" class="cell">
+<div id="79b9b8c9" class="cell" data-execution_count="14">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Get the starting triangle and the ending triangle to plot the geodesic between them</span></span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>t1_idx <span class="op">=</span> triangles[:, <span class="dv">1</span>, <span class="dv">2</span>].argmin()</span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>t1 <span class="op">=</span> triangles[t1_idx]</span>
@@ -781,21 +792,23 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb16-26"><a href="#cb16-26" aria-hidden="true" tabindex="-1"></a>plot_shape(t1, label <span class="op">=</span> <span class="st">"Triangle 1"</span>, color<span class="op">=</span><span class="st">"red"</span>, ax<span class="op">=</span>ax2)</span>
 <span id="cb16-27"><a href="#cb16-27" aria-hidden="true" tabindex="-1"></a>plot_shape(t2, label <span class="op">=</span> <span class="st">"Triangle 2"</span>, color<span class="op">=</span><span class="st">"blue"</span>, ax<span class="op">=</span>ax2)</span>
 <span id="cb16-28"><a href="#cb16-28" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
-<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"Start and End Triangles with Geodesic"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb16-29"><a href="#cb16-29" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"Start and End Triangles with Geodesic"</span>)</span>
+<span id="cb16-30"><a href="#cb16-30" aria-hidden="true" tabindex="-1"></a></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_51_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="plots" class="level4">
 <h4 class="anchored" data-anchor-id="plots">Plots</h4>
-<div id="74e455fa" class="cell">
+<div id="e133cb2d" class="cell" data-execution_count="15">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Plot raw object data</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
@@ -816,12 +829,13 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb17-18"><a href="#cb17-18" aria-hidden="true" tabindex="-1"></a>ax2.legend()</span>
 <span id="cb17-19"><a href="#cb17-19" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"Preshapes Aligned to Frechet Mean"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_53_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p><strong>Note to self:</strong> Make sure that when you run this, the triangle is upward facing, or else all the friends you show it to will think it looks like a uterus.</p>
 <p>Aligning the shapes makes our space look much more organized, and it clearly reveals two important facts: 1. Our shape space is rotationally invariant 2. The the estimated frechet mean correctly lands in the “middle” of our data.</p>
@@ -832,9 +846,9 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="modes-of-variation" class="level4">
 <h4 class="anchored" data-anchor-id="modes-of-variation">Modes of Variation</h4>
-<div id="9a1541f6" class="cell">
+<div id="71c18b52" class="cell" data-execution_count="16">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(triangles.shape[-2:])</span></span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>PCs, Vars, _ <span class="op">=</span> ApprPGA(triangles)</span>
@@ -876,12 +890,13 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb18-39"><a href="#cb18-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-40"><a href="#cb18-40" aria-hidden="true" tabindex="-1"></a>    plt.grid()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_59_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>The fist mode of variation is pretty obvious. It encapsulates the variance from the random gaussian that dictates the height of the third point of the triangle. It looks like it also squishes the triangle horizontally, but I’m prety sure thats just an artifact of how the taller thrid point forces the other points to be closer to the origin to keep the coordinates on the unit sphere.</p>
 <p>The second mode of variation accounts for the way in which the left can be more obtuse and the right one more accute and vise versa.</p>
@@ -890,13 +905,13 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 </section>
 <section id="experiment-2-corpora-callosa" class="level3">
 <h3 class="anchored" data-anchor-id="experiment-2-corpora-callosa">Experiment 2: Corpora Callosa</h3>
-<div id="200fafe0" class="cell">
+<div id="549503e9" class="cell" data-execution_count="17">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co">## load CC data</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>shapes_txt <span class="op">=</span> Path(<span class="st">"cc-shapes"</span>)</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>shapes_txt <span class="op">=</span> Path(<span class="st">"/Users/loganfoster/projects/GeometryOfData/cc-shapes"</span>)</span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>shapes_list <span class="op">=</span> []</span>
 <span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> path <span class="kw">in</span> shapes_txt.iterdir():</span>
 <span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>    shape <span class="op">=</span> []</span>
@@ -915,17 +930,17 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb19-20"><a href="#cb19-20" aria-hidden="true" tabindex="-1"></a><span class="co"># plt.scatter(X[0,:], X[1,:])</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="8b742282" class="cell">
+<div id="d7883da8" class="cell" data-execution_count="18">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>X <span class="op">=</span> project_to_preshape_sphere(shapes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
 <section id="geodesic-between-two-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="geodesic-between-two-shapes">Geodesic Between Two Shapes</h4>
-<div id="abae09e5" class="cell">
+<div id="1974d631" class="cell" data-execution_count="19">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>C_1idx <span class="op">=</span> X[:, <span class="dv">1</span>, <span class="dv">2</span>].argmin()</span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>C_1 <span class="op">=</span> X[C_1idx]</span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>C_2idx <span class="op">=</span> X[:, <span class="dv">1</span>, <span class="dv">2</span>].argmax()</span>
@@ -954,86 +969,91 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
 <span id="cb21-26"><a href="#cb21-26" aria-hidden="true" tabindex="-1"></a>plot_shape(C_2, label <span class="op">=</span> <span class="st">"CC 2"</span>, color<span class="op">=</span><span class="st">"blue"</span>)</span>
 <span id="cb21-27"><a href="#cb21-27" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-28"><a href="#cb21-28" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Start and End CCs with Geodesic"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb21-29"><a href="#cb21-29" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Start and End CCs with Geodesic"</span>)</span>
+<span id="cb21-30"><a href="#cb21-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-31"><a href="#cb21-31" aria-hidden="true" tabindex="-1"></a>    </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<pre><code>Text(0.5, 1.0, 'Start and End CCs with Geodesic')</code></pre>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_65_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="scattering-all-shapes" class="level4">
 <h4 class="anchored" data-anchor-id="scattering-all-shapes">Scattering All shapes</h4>
-<div id="95deff26" class="cell">
+<div id="b7a9322c" class="cell" data-execution_count="20">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>ax1.title.set_text(<span class="st">"All Shapes, No Alignment"</span>)</span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> CC <span class="kw">in</span> X:</span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    plot_shape(CC, vetrices<span class="op">=</span> <span class="va">True</span>, s <span class="op">=</span> <span class="dv">5</span>, lw <span class="op">=</span> <span class="fl">0.2</span>, ax<span class="op">=</span> ax1)</span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a>mean, _ <span class="op">=</span> frechet_mean_GD(X, verbose<span class="op">=</span> <span class="va">False</span>)</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"All Shapes Aligned to Mean Shape"</span>)</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> CC <span class="kw">in</span> X:</span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    CC_r <span class="op">=</span> OPA(mean, CC)</span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    plot_shape(CC, vetrices<span class="op">=</span> <span class="va">True</span>, s <span class="op">=</span> <span class="dv">5</span>, lw <span class="op">=</span> <span class="fl">0.2</span>, ax <span class="op">=</span> ax2)</span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>plot_shape(mean, color<span class="op">=</span><span class="st">"black"</span>, s <span class="op">=</span> <span class="dv">10</span>, lw <span class="op">=</span> <span class="dv">1</span>, ax<span class="op">=</span> ax2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>fig, (ax1, ax2) <span class="op">=</span> plt.subplots(<span class="dv">1</span>, <span class="dv">2</span>, figsize <span class="op">=</span> (<span class="dv">20</span>,<span class="dv">8</span>))</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>ax1.title.set_text(<span class="st">"All Shapes, No Alignment"</span>)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> CC <span class="kw">in</span> X:</span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    plot_shape(CC, vetrices<span class="op">=</span> <span class="va">True</span>, s <span class="op">=</span> <span class="dv">5</span>, lw <span class="op">=</span> <span class="fl">0.2</span>, ax<span class="op">=</span> ax1)</span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>mean, _ <span class="op">=</span> frechet_mean_GD(X, verbose<span class="op">=</span> <span class="va">False</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a>ax2.title.set_text(<span class="st">"All Shapes Aligned to Mean Shape"</span>)</span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> CC <span class="kw">in</span> X:</span>
+<span id="cb22-14"><a href="#cb22-14" aria-hidden="true" tabindex="-1"></a>    CC_r <span class="op">=</span> OPA(mean, CC)</span>
+<span id="cb22-15"><a href="#cb22-15" aria-hidden="true" tabindex="-1"></a>    plot_shape(CC, vetrices<span class="op">=</span> <span class="va">True</span>, s <span class="op">=</span> <span class="dv">5</span>, lw <span class="op">=</span> <span class="fl">0.2</span>, ax <span class="op">=</span> ax2)</span>
+<span id="cb22-16"><a href="#cb22-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-17"><a href="#cb22-17" aria-hidden="true" tabindex="-1"></a>plot_shape(mean, color<span class="op">=</span><span class="st">"black"</span>, s <span class="op">=</span> <span class="dv">10</span>, lw <span class="op">=</span> <span class="dv">1</span>, ax<span class="op">=</span> ax2)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_67_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-21-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>It is hard to see an obvious difference in the aligned shapes. It seems like they are already pretty centered</p>
 </section>
 <section id="pga" class="level4">
 <h4 class="anchored" data-anchor-id="pga">PGA</h4>
-<div id="dbf9b208" class="cell">
+<div id="c77baedc" class="cell" data-execution_count="21">
 <details class="code-fold">
-<summary>Code</summary>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>V, Vars, _ <span class="op">=</span> ApprPGA(X)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">16</span>))</span>
-<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>)</span>
-<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>plt.plot([i <span class="op">+</span> <span class="dv">1</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(Vars))], Vars)</span>
-<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
-<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scree Plot"</span>)</span>
-<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
-<span id="cb24-12"><a href="#cb24-12" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) </span>
-<span id="cb24-13"><a href="#cb24-13" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.sqrt(Vars[i])</span>
-<span id="cb24-14"><a href="#cb24-14" aria-hidden="true" tabindex="-1"></a>    pc <span class="op">=</span> V[i].reshape(mean.shape)</span>
-<span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">222</span><span class="op">+</span>i)</span>
-<span id="cb24-17"><a href="#cb24-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-18"><a href="#cb24-18" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f"3 +- standard deviations in mode </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> Standard Deviation: </span><span class="sc">{</span>std<span class="sc">}</span><span class="ss">"</span>)</span>
-<span id="cb24-19"><a href="#cb24-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-20"><a href="#cb24-20" aria-hidden="true" tabindex="-1"></a>    plot_shape(mean, s <span class="op">=</span> <span class="dv">10</span>, color<span class="op">=</span> <span class="st">"black"</span>, label <span class="op">=</span> <span class="st">"Frechet Mean"</span>)</span>
-<span id="cb24-21"><a href="#cb24-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> ts:</span>
-<span id="cb24-22"><a href="#cb24-22" aria-hidden="true" tabindex="-1"></a>        T <span class="op">=</span> EXP(mean,  t <span class="op">*</span> std <span class="op">*</span> pc).reshape(<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>)</span>
-<span id="cb24-23"><a href="#cb24-23" aria-hidden="true" tabindex="-1"></a>        T <span class="op">=</span> OPA(mean, T)</span>
-<span id="cb24-24"><a href="#cb24-24" aria-hidden="true" tabindex="-1"></a>        plot_shape(T, s <span class="op">=</span> <span class="dv">5</span>)</span>
-<span id="cb24-25"><a href="#cb24-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb24-26"><a href="#cb24-26" aria-hidden="true" tabindex="-1"></a>    plt.legend()        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<summary>Show Code</summary>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>V, Vars, _ <span class="op">=</span> ApprPGA(X)</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>plt.figure(figsize<span class="op">=</span>(<span class="dv">20</span>,<span class="dv">16</span>))</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a>plt.subplot(<span class="dv">221</span>)</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>plt.plot([i <span class="op">+</span> <span class="dv">1</span> <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(Vars))], Vars)</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.grid()</span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Scree Plot"</span>)</span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">3</span>):</span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a>    ts <span class="op">=</span> np.array([<span class="op">-</span><span class="dv">3</span>,<span class="op">-</span><span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>]) </span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a>    std <span class="op">=</span> np.sqrt(Vars[i])</span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a>    pc <span class="op">=</span> V[i].reshape(mean.shape)</span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>    plt.subplot(<span class="dv">222</span><span class="op">+</span>i)</span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>    plt.title(<span class="ss">f"3 +- standard deviations in mode </span><span class="sc">{</span>i<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss"> </span><span class="ch">\n</span><span class="ss"> Standard Deviation: </span><span class="sc">{</span>std<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a>    plot_shape(mean, s <span class="op">=</span> <span class="dv">10</span>, color<span class="op">=</span> <span class="st">"black"</span>, label <span class="op">=</span> <span class="st">"Frechet Mean"</span>)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> t <span class="kw">in</span> ts:</span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>        T <span class="op">=</span> EXP(mean,  t <span class="op">*</span> std <span class="op">*</span> pc).reshape(<span class="dv">2</span>,<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>        T <span class="op">=</span> OPA(mean, T)</span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a>        plot_shape(T, s <span class="op">=</span> <span class="dv">5</span>)</span>
+<span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>    plt.legend()        </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw2_files/hw2_70_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-22-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>The first mode of deviation seems to encompase the way in which the CCs can be more curved (like a wish bone) or less curved (like a watermellon rine). The second mode encompases the way the CCs can be thicker or thinner at the ends and middle. The third mode accounts for the way the CCs can be kind of wavey.</p>
 <p>For triangle shapes, the maximum number of modes is 2. This is becuase our data starts off as being <span class="math inline">\(2 \times 3 =  6\)</span> dimensional. Removing translation in two dimensions yeilds two less dimensions of freedom, and removing scale and rotation removes another 2. This leaves us with only 2 leftover modes of variance.</p>
@@ -1116,6 +1136,57 @@ b. Eigenvectors/values are given by the SVD of $\Sigma$. (In practice, np.linalg
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);

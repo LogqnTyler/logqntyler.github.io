@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.9.36">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -15,10 +15,13 @@
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
 */
-code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -64,7 +67,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
@@ -77,10 +80,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-bb62276ab45c84d9efd712f51ff97b5a.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-f7b739f6d12fe4d49c3e911a2c066b16.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-64e2d065a6e042a15f30c9edb9c23635.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -108,9 +111,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 
   <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -188,7 +194,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Geometry of Data: Part 3</h1>
+      <div class="quarto-title-block"><div><h1 class="title">Geometry of Data: Part 3</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li></ul></div></div>
                   <div>
         <div class="description">
           Experiments with PCA, Isomap, and autoencoders for geometric data analysis.
@@ -236,9 +242,9 @@ window.Quarto = {
 <section id="part-1" class="level3">
 <h3 class="anchored" data-anchor-id="part-1">Part 1</h3>
 <p>Sample ellipse:</p>
-<div id="187e13f7" class="cell">
+<div id="cell-1" class="cell">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">## sampling an elipse</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.io <span class="im">as</span> pio</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>pio.renderers.default <span class="op">=</span> <span class="st">"notebook"</span></span>
@@ -255,9 +261,9 @@ window.Quarto = {
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co"># ellipse.get_ellipse(a = 12, b = 6, row = 48, col = 35, theta = 0).dtype</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="71a8b42e" class="cell">
+<div id="cell-2" class="cell" data-execution_count="2">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">## gernerate data</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1000</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>rng <span class="op">=</span> np.random.default_rng()</span>
@@ -282,20 +288,22 @@ window.Quarto = {
 </section>
 <section id="c.-pca" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca">C. PCA</h4>
-<div id="8127da97" class="cell">
+<div id="cell-4" class="cell" data-execution_count="3">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.decomposition <span class="im">import</span> PCA</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA()</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data_flattened <span class="op">=</span> data.reshape(N, <span class="dv">64</span> <span class="op">*</span> <span class="dv">64</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data_flattened.shape)</span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>pca.fit(data_flattened)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>(1000, 4096)</code></pre>
-<div id="fbc4e524" class="cell">
+</div>
+</div>
+<div id="cell-5" class="cell" data-execution_count="4">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>n_components <span class="op">=</span> pca.singular_values_.size</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>near_zero <span class="op">=</span> np.<span class="bu">sum</span>(np.isclose(pca.singular_values_, <span class="dv">0</span>))</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -303,15 +311,17 @@ window.Quarto = {
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pca.singular_values_</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Number of non-zero pricipal components: 999</code></pre>
+</div>
+</div>
 <p>I found that 999 of the eigenvalues were non-zero noise. It seems like one axis of variability is being lost to the mean centering of the data.</p>
 </section>
 <section id="d.-plotting-pca" class="level4">
 <h4 class="anchored" data-anchor-id="d.-plotting-pca">D. Plotting PCA</h4>
-<div id="cfd90873" class="cell">
+<div id="cell-7" class="cell" data-execution_count="5">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>PCA_projection <span class="op">=</span> pca.components_[:<span class="dv">3</span>] <span class="op">@</span> data_flattened.T</span>
@@ -325,43 +335,46 @@ window.Quarto = {
 <span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span>
 <span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_7_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-6-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
+</div>
+</div>
 <p>Wow, this shape is fascinating! I absolutely didn’t excpet the data to look like this. This shape looks like a warped sheet of paper (lending support to my hypothesis that the intrisic dimensionality of the data is 2) which comes together to 4 “corners”. I wonder if the data points here represent the elipses with centers at the “corners” at the possible combinations of x and y values. Let’s find out.</p>
-<div id="1703185c" class="cell">
+<div id="cell-9" class="cell" data-execution_count="6">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>fig_1 <span class="op">=</span> px.scatter_3d(df, x<span class="op">=</span><span class="st">"PC_1"</span>, y<span class="op">=</span><span class="st">"PC_2"</span>, z<span class="op">=</span><span class="st">"PC_3"</span>, color<span class="op">=</span><span class="st">"rows"</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>fig_1.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>fig_1.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>fig_1.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_9_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-7-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div id="8dcf3261" class="cell">
+</div>
+</div>
+<div id="cell-10" class="cell" data-execution_count="7">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>fig_2 <span class="op">=</span> px.scatter_3d(df, x<span class="op">=</span><span class="st">"PC_1"</span>, y<span class="op">=</span><span class="st">"PC_2"</span>, z<span class="op">=</span><span class="st">"PC_3"</span>, color<span class="op">=</span><span class="st">"cols"</span>)</span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>fig_2.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>fig_2.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span>
 <span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>fig_2.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_10_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-8-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>I was right! The “corners” correspond to the “corners” of the <span class="math inline">\([16, 48] \times [16,48]\)</span> set of possible x-y center coordinates for the elipses.</p>
 <p>I was expecting a 2d shape, but I guess I pictured something less curved.</p>
@@ -375,9 +388,9 @@ window.Quarto = {
 </section>
 <section id="b.-isomap" class="level4">
 <h4 class="anchored" data-anchor-id="b.-isomap">B. IsoMap</h4>
-<div id="23c44a17" class="cell">
+<div id="cell-12" class="cell" data-execution_count="8">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> sklearn.manifold <span class="im">import</span> Isomap</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>embedding <span class="op">=</span> Isomap(n_components <span class="op">=</span> <span class="dv">3</span>)</span>
@@ -399,16 +412,18 @@ window.Quarto = {
 <span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of non-negative eigenvalues: </span><span class="sc">{</span><span class="bu">len</span>(singular_values) <span class="op">-</span> Negative<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of negative eigenvalues: </span><span class="sc">{</span>Negative<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Number of non-negative eigenvalues: 779
 Number of negative eigenvalues: 221</code></pre>
+</div>
+</div>
 <p>Our data isn’t flat, since it has a 223 negative eigenvalues and only 777 which are positive. I think IsoMap will still try do a decent job embedding the data in two dimensions.</p>
 </section>
 <section id="c.-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="c.-isomap-visualization">C. IsoMap Visualization</h4>
-<div id="8d4603c0" class="cell">
+<div id="cell-14" class="cell" data-execution_count="9">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> plotly.subplots <span class="im">import</span> make_subplots</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>embedding_vector_df <span class="op">=</span> pd.DataFrame(np.stack((embedding.embedding_[:,<span class="dv">0</span>].T, embedding.embedding_[:,<span class="dv">1</span>].T, embedding.embedding_[:,<span class="dv">2</span>], rows, cols)).T, columns<span class="op">=</span>[<span class="st">"C_1"</span>, <span class="st">"C_2"</span>, <span class="st">"C_3"</span>, <span class="st">"col"</span>, <span class="st">"row"</span>])</span>
@@ -421,16 +436,17 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Colored by Row"</span>,</span>
 <span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_14_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-10-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div id="1b4551fe" class="cell">
+</div>
+</div>
+<div id="cell-15" class="cell" data-execution_count="10">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>px.scatter(</span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>    embedding_vector_df,</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"C_1"</span>,</span>
@@ -439,20 +455,21 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    title<span class="op">=</span><span class="st">"Colored by Column"</span>,</span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_15_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-11-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Wow, that looks really really good!</p>
 </section>
 <section id="d.-3d-isomap-visualization" class="level4">
 <h4 class="anchored" data-anchor-id="d.-3d-isomap-visualization">D. 3D IsoMap Visualization</h4>
-<div id="4b1afc20" class="cell">
+<div id="cell-17" class="cell" data-execution_count="11">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_3d(</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    embedding_vector_df,</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="st">"C_1"</span>,</span>
@@ -464,21 +481,22 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_17_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-12-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Wow, this is definetely a curved shape. The plot changes with each run. But each new shape is pretty curved. I was right that the manifold would be curved, but decently embeddable in 2 dimensions.</p>
 </section>
 </section>
 <section id="part-3" class="level3">
 <h3 class="anchored" data-anchor-id="part-3">Part 3</h3>
-<div id="039b2cda" class="cell">
+<div id="cell-19" class="cell" data-execution_count="12">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"PYTORCH_ENABLE_MPS_FALLBACK"</span>] <span class="op">=</span> <span class="st">"1"</span></span>
 <span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -586,11 +604,13 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb15-105"><a href="#cb15-105" aria-hidden="true" tabindex="-1"></a>train_data <span class="op">=</span> TensorDataset(X, y)</span>
 <span id="cb15-106"><a href="#cb15-106" aria-hidden="true" tabindex="-1"></a>train_loader <span class="op">=</span> DataLoader(train_data, batch_size <span class="op">=</span> batch_size, shuffle <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Device: mps</code></pre>
-<div id="ef351822" class="cell">
+</div>
+</div>
+<div id="cell-20" class="cell" data-execution_count="13">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">2</span> <span class="co"># set your latent dimension here</span></span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>convAE2 <span class="op">=</span> ConvolutionalAutoencoder(num_channels, latent_dim)</span>
@@ -604,13 +624,15 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>    convAE2 <span class="op">=</span> train(convAE2.to(device), train_loader)</span>
 <span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>    torch.save(convAE2.state_dict(), <span class="st">"convAE2.pth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Loaded checkpoint</code></pre>
+</div>
+</div>
 <section id="a.-evaluation-of-reconstruction" class="level4">
 <h4 class="anchored" data-anchor-id="a.-evaluation-of-reconstruction">A. Evaluation of Reconstruction</h4>
-<div id="29c75de2" class="cell">
+<div id="cell-22" class="cell" data-execution_count="14">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Making testing data</span></span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>rows_test, cols_test <span class="op">=</span> rng.uniform(<span class="dv">16</span>, <span class="dv">48</span>, <span class="dv">100</span>), rng.uniform(<span class="dv">16</span>, <span class="dv">48</span>, <span class="dv">100</span>)</span>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -658,20 +680,21 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb19-45"><a href="#cb19-45" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-46"><a href="#cb19-46" aria-hidden="true" tabindex="-1"></a>show([grid_t, grid_ae, grid_pca], titles <span class="op">=</span> [<span class="st">"Original Images"</span>, <span class="st">"Autoencoder Reconstruction"</span>, <span class="st">"PCA Reconstruction"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_22_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>The autoencoder outshines the PCA reconstruction. I lowerd the learning rate and trained for more epochs, which significantly improved its performance. The PCA does a terrible job. The two parameters seem to correspond to the elipse being in the left or right hemisphere and how much of the elipse is in the center of the data.</p>
 </section>
 <section id="b.-increasing-latent-dim" class="level4">
 <h4 class="anchored" data-anchor-id="b.-increasing-latent-dim">B. Increasing Latent Dim</h4>
-<div id="49a7db8e" class="cell">
+<div id="cell-24" class="cell" data-execution_count="15">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># convAE16 = ConvolutionalAutoencoder(num_channels, latent_dim)</span></span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># convAE16.load_state_dict(torch.load("convAE16.pth", map_location=device))</span></span>
@@ -679,9 +702,9 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="co"># convAE16.to(device)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="a128bc52" class="cell">
+<div id="cell-25" class="cell" data-execution_count="16">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">16</span> <span class="co"># set your latent dimension here</span></span>
 <span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>convAE16 <span class="op">=</span> ConvolutionalAutoencoder(num_channels, latent_dim)</span>
@@ -697,11 +720,13 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a>    convAE16 <span class="op">=</span> train(convAE16.to(device), train_loader)</span>
 <span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>    torch.save(convAE16.state_dict(), <span class="st">"convAE16.pth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Loaded checkpoint</code></pre>
-<div id="8760983e" class="cell">
+</div>
+</div>
+<div id="cell-26" class="cell" data-execution_count="17">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Reconstructing with the auto encoder</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> torch.no_grad():</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> convAE16.forward(test_tensor)</span>
@@ -726,21 +751,22 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a>show([grid_t, grid_ae, grid_pca], titles <span class="op">=</span> [<span class="st">"Original Images"</span>, <span class="st">"Autoencoder Reconstruction"</span>, <span class="st">"PCA Reconstruction"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_26_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-18-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Now the autoencoder does a lot better, but PCA still struggles heavily.</p>
 </section>
 <section id="c.-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c.-pca-in-latent-space">C. PCA in Latent Space</h4>
 <p><em>Note:</em> I’m running PCA on the embeddings from the training data, since the question did not specify the test dataset.</p>
-<div id="170d6df4" class="cell">
+<div id="cell-28" class="cell" data-execution_count="18">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> convAE16.encoder(torch.from_numpy(data).<span class="bu">type</span>(torch.float32).to(device).unsqueeze(<span class="dv">1</span>)).squeeze().detach().cpu().numpy()</span>
 <span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>pca_latent <span class="op">=</span> PCA(n_components<span class="op">=</span>latent_dim)</span>
 <span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>pca_latent.fit(latent_embeddings)</span>
@@ -758,16 +784,17 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb24-15"><a href="#cb24-15" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb24-16"><a href="#cb24-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_28_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-19-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div id="e02c42cb" class="cell">
+</div>
+</div>
+<div id="cell-29" class="cell" data-execution_count="19">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> convAE16.encoder(torch.from_numpy(data).<span class="bu">type</span>(torch.float32).to(device).unsqueeze(<span class="dv">1</span>)).squeeze().detach().cpu().numpy()</span>
 <span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>pca_latent <span class="op">=</span> PCA(n_components<span class="op">=</span>latent_dim)</span>
 <span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>pca_latent.fit(latent_embeddings)</span>
@@ -785,26 +812,27 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb25-15"><a href="#cb25-15" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb25-16"><a href="#cb25-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_29_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-20-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>That looks incredibaly cool. This shape, however, is certainly not flat.</p>
 </section>
 <section id="d.-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d.-immersion-test">D. Immersion Test</h4>
-<div id="3e7dac05" class="cell">
+<div id="cell-31" class="cell" data-execution_count="20">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Make a function that computes the rank of the Jacobian at any given input</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="8e3c0ead" class="cell">
+<div id="cell-32" class="cell" data-execution_count="21">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> torch.func <span class="im">import</span> jacfwd</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="co">## </span><span class="al">NOTE</span><span class="co">: I computed J_2 and J_16 on the gpu clusters, since they took a LONG time. Here is the code I used to compute them:</span></span>
@@ -849,9 +877,9 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb27-42"><a href="#cb27-42" aria-hidden="true" tabindex="-1"></a>rank_16_a <span class="op">=</span> rank_16.cpu().numpy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="271331de" class="cell">
+<div id="cell-33" class="cell" data-execution_count="22">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.histogram(rank_2_a, title<span class="op">=</span><span class="st">"Histogram of Jacobian Rank for latent_dim = 2"</span>)</span>
 <span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">5</span>])</span>
 <span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
@@ -860,27 +888,29 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(<span class="bu">range</span><span class="op">=</span>[<span class="dv">10</span>, <span class="dv">20</span>])</span>
 <span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_33_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-23-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
+</div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_33_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-23-output-2.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Both of these autoencoders are less than full rank. The autoencoder with the two-dimensional latent space is not full rank everwhere, but it is close, 6/100 inputs are rank 1 in the output. The autoencoder with the 16-dimensional latent space is worse, being full rank only at about half of the inputs. Both these autoencoders fail to be immersions. I’m not sure how to interpret these in light of the data having an intrinsic dimensionality of two. Maybe this is an artifact of sub-optimal training.</p>
 </section>
 </section>
 <section id="part-4" class="level3">
 <h3 class="anchored" data-anchor-id="part-4">Part 4</h3>
-<div id="6255d281" class="cell">
+<div id="cell-35" class="cell" data-execution_count="23">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>os.environ[<span class="st">"PYTORCH_ENABLE_MPS_FALLBACK"</span>] <span class="op">=</span> <span class="st">"1"</span></span>
 <span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -903,9 +933,9 @@ Number of negative eigenvalues: 221</code></pre>
 </section>
 <section id="b-eigen-analysis" class="level4">
 <h4 class="anchored" data-anchor-id="b-eigen-analysis">2.B Eigen Analysis</h4>
-<div id="130360a1" class="cell">
+<div id="cell-37" class="cell" data-execution_count="24">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1_000</span></span>
@@ -953,24 +983,27 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb30-45"><a href="#cb30-45" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of non-negative eigenvalues: </span><span class="sc">{</span><span class="bu">len</span>(singular_values) <span class="op">-</span> Negative<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb30-46"><a href="#cb30-46" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"Number of negative eigenvalues: </span><span class="sc">{</span>Negative<span class="sc">}</span><span class="ss">"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>No IsoMap fit found, computing from scratch
 Loaded eigenvalues
 Number of non-negative eigenvalues: 779
 Number of negative eigenvalues: 221</code></pre>
-<div class="quarto-figure quarto-figure-center">
+</div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_37_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-25-output-2.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>I don’t think this data manifold is flat either, since almost half of its eigenvalues are flat. Because of how curved this manifold is, I’m not sure how well IsoMap will do embedding it into a lower dimensional space.</p>
 </section>
 <section id="d-3d-isomap-scatter" class="level4">
 <h4 class="anchored" data-anchor-id="d-3d-isomap-scatter">2.D 3D Isomap Scatter</h4>
-<div id="e93875fb" class="cell">
+<div id="cell-39" class="cell" data-execution_count="25">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    transformed_teapots <span class="op">=</span> torch.load(<span class="st">"teapot_transformed.pth"</span>, map_location<span class="op">=</span>device, weights_only<span class="op">=</span><span class="va">False</span>)</span>
 <span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"Loaded transformed teapots"</span>)</span>
@@ -980,11 +1013,13 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>    transformed_teapots <span class="op">=</span> embedding.fit_transform(X<span class="op">=</span> flat_teapots)</span>
 <span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>    torch.save(transformed_teapots, <span class="st">"teapot_transformed.pth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Loaded transformed teapots</code></pre>
-<div id="77548126" class="cell">
+</div>
+</div>
+<div id="cell-40" class="cell" data-execution_count="26">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(transformed_teapots, columns<span class="op">=</span>[<span class="st">"X"</span>, <span class="st">"Y"</span>, <span class="st">"Z"</span>])</span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.scatter_3d(</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    transformed_teapots,</span>
@@ -995,20 +1030,21 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb34-8"><a href="#cb34-8" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">2</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb34-9"><a href="#cb34-9" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_40_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-27-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>I was right about the curvature, this shape is definitely not flat. This shape is decently full in <span class="math inline">\(\mathbb{R}^3\)</span>, meaning it could be a 3-dimensional manifold.</p>
 </section>
 <section id="a-small-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="a-small-autoencoder">3.A Small Autoencoder</h4>
-<div id="3c568d03" class="cell">
+<div id="cell-42" class="cell" data-execution_count="27">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> joblib</span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>N <span class="op">=</span> <span class="dv">1_000</span></span>
@@ -1025,9 +1061,9 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a>train_loader <span class="op">=</span> DataLoader(train_data, batch_size <span class="op">=</span> batch_size, shuffle <span class="op">=</span> <span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="96458126" class="cell">
+<div id="cell-43" class="cell" data-execution_count="28">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(N)</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">4</span></span>
 <span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>teapot_AE4 <span class="op">=</span> ConvolutionalAutoencoder(<span class="dv">3</span>, latent_dim).to(device)</span>
@@ -1040,11 +1076,13 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb36-10"><a href="#cb36-10" aria-hidden="true" tabindex="-1"></a>    teapot_AE4 <span class="op">=</span> train(teapot_AE4, train_loader, num_epochs<span class="op">=</span><span class="dv">20</span>)</span>
 <span id="cb36-11"><a href="#cb36-11" aria-hidden="true" tabindex="-1"></a>    torch.save(teapot_AE4.state_dict(), <span class="st">"teapot_AE4.pth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Loaded checkpoint</code></pre>
-<div id="d44b792b" class="cell">
+</div>
+</div>
+<div id="cell-44" class="cell" data-execution_count="29">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting grids</span></span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show(imgs, titles <span class="op">=</span> <span class="va">None</span>): <span class="co">## from pytroch tutorial</span></span>
 <span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(imgs, <span class="bu">list</span>):</span>
@@ -1071,9 +1109,9 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb38-24"><a href="#cb38-24" aria-hidden="true" tabindex="-1"></a>pca.fit(flat_teapots)<span class="op">;</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="11441f60" class="cell">
+<div id="cell-45" class="cell" data-execution_count="30">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pca.mean_</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>centered_flat <span class="op">=</span> viz_sample.reshape(<span class="dv">100</span>, <span class="dv">3</span> <span class="op">*</span> <span class="dv">64</span> <span class="op">*</span> <span class="dv">64</span>).cpu().numpy() <span class="op">-</span> mean</span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>PCS <span class="op">=</span> pca.components_[:latent_dim]</span>
@@ -1095,21 +1133,24 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb39-19"><a href="#cb39-19" aria-hidden="true" tabindex="-1"></a><span class="co">## show the grids</span></span>
 <span id="cb39-20"><a href="#cb39-20" aria-hidden="true" tabindex="-1"></a>show([grid_true, grid_ae, grid_pca], titles <span class="op">=</span> [<span class="st">"Original Images"</span>, <span class="st">"Autoencoder Reconstruction"</span>, <span class="st">"PCA Reconstruction"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>torch.Size([100, 3, 64, 64])</code></pre>
-<div class="quarto-figure quarto-figure-center">
+</div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_45_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-31-output-2.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>This autoencoder does a terrible job, sometimes worse than PCA. I The autoencoder just learns to create shaded sphere in place of the teapots. Maybe adding more latent dims would help.</p>
 </section>
 <section id="b-larger-autoencoder" class="level4">
 <h4 class="anchored" data-anchor-id="b-larger-autoencoder">3.B Larger Autoencoder</h4>
-<div id="67bf0ace" class="cell">
+<div id="cell-47" class="cell" data-execution_count="31">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># print(N)</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>latent_dim <span class="op">=</span> <span class="dv">16</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>teapot_AE16 <span class="op">=</span> ConvolutionalAutoencoder(<span class="dv">3</span>, latent_dim).to(device)</span>
@@ -1122,11 +1163,13 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>    teapot_AE16 <span class="op">=</span> train(teapot_AE16, train_loader, num_epochs<span class="op">=</span><span class="dv">20</span>)</span>
 <span id="cb41-11"><a href="#cb41-11" aria-hidden="true" tabindex="-1"></a>    torch.save(teapot_AE16.state_dict(), <span class="st">"teapot_AE16.pth"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>Loaded checkpoint</code></pre>
-<div id="469de214" class="cell">
+</div>
+</div>
+<div id="cell-48" class="cell" data-execution_count="32">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plotting grids</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> show(imgs, titles <span class="op">=</span> <span class="va">None</span>): <span class="co">## from pytroch tutorial</span></span>
 <span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> <span class="kw">not</span> <span class="bu">isinstance</span>(imgs, <span class="bu">list</span>):</span>
@@ -1152,10 +1195,838 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>pca <span class="op">=</span> PCA(n_components<span class="op">=</span>latent_dim)<span class="op">;</span></span>
 <span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>pca.fit(flat_teapots)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
+<div class="cell-output cell-output-display" data-execution_count="32">
+<style>#sk-container-id-1 {
+  /* Definition of color scheme common for light and dark mode */
+  --sklearn-color-text: #000;
+  --sklearn-color-text-muted: #666;
+  --sklearn-color-line: gray;
+  /* Definition of color scheme for unfitted estimators */
+  --sklearn-color-unfitted-level-0: #fff5e6;
+  --sklearn-color-unfitted-level-1: #f6e4d2;
+  --sklearn-color-unfitted-level-2: #ffe0b3;
+  --sklearn-color-unfitted-level-3: chocolate;
+  /* Definition of color scheme for fitted estimators */
+  --sklearn-color-fitted-level-0: #f0f8ff;
+  --sklearn-color-fitted-level-1: #d4ebff;
+  --sklearn-color-fitted-level-2: #b3dbfd;
+  --sklearn-color-fitted-level-3: cornflowerblue;
+}
+
+#sk-container-id-1.light {
+  /* Specific color for light theme */
+  --sklearn-color-text-on-default-background: black;
+  --sklearn-color-background: white;
+  --sklearn-color-border-box: black;
+  --sklearn-color-icon: #696969;
+}
+
+#sk-container-id-1.dark {
+  --sklearn-color-text-on-default-background: white;
+  --sklearn-color-background: #111;
+  --sklearn-color-border-box: white;
+  --sklearn-color-icon: #878787;
+}
+
+#sk-container-id-1 {
+  color: var(--sklearn-color-text);
+}
+
+#sk-container-id-1 pre {
+  padding: 0;
+}
+
+#sk-container-id-1 input.sk-hidden--visually {
+  border: 0;
+  clip: rect(1px 1px 1px 1px);
+  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+#sk-container-id-1 div.sk-dashed-wrapped {
+  border: 1px dashed var(--sklearn-color-line);
+  margin: 0 0.4em 0.5em 0.4em;
+  box-sizing: border-box;
+  padding-bottom: 0.4em;
+  background-color: var(--sklearn-color-background);
+}
+
+#sk-container-id-1 div.sk-container {
+  /* jupyter's `normalize.less` sets `[hidden] { display: none; }`
+     but bootstrap.min.css set `[hidden] { display: none !important; }`
+     so we also need the `!important` here to be able to override the
+     default hidden behavior on the sphinx rendered scikit-learn.org.
+     See: https://github.com/scikit-learn/scikit-learn/issues/21755 */
+  display: inline-block !important;
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-text-repr-fallback {
+  display: none;
+}
+
+div.sk-parallel-item,
+div.sk-serial,
+div.sk-item {
+  /* draw centered vertical line to link estimators */
+  background-image: linear-gradient(var(--sklearn-color-text-on-default-background), var(--sklearn-color-text-on-default-background));
+  background-size: 2px 100%;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Parallel-specific style estimator block */
+
+#sk-container-id-1 div.sk-parallel-item::after {
+  content: "";
+  width: 100%;
+  border-bottom: 2px solid var(--sklearn-color-text-on-default-background);
+  flex-grow: 1;
+}
+
+#sk-container-id-1 div.sk-parallel {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  background-color: var(--sklearn-color-background);
+  position: relative;
+}
+
+#sk-container-id-1 div.sk-parallel-item {
+  display: flex;
+  flex-direction: column;
+}
+
+#sk-container-id-1 div.sk-parallel-item:first-child::after {
+  align-self: flex-end;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:last-child::after {
+  align-self: flex-start;
+  width: 50%;
+}
+
+#sk-container-id-1 div.sk-parallel-item:only-child::after {
+  width: 0;
+}
+
+/* Serial-specific style estimator block */
+
+#sk-container-id-1 div.sk-serial {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--sklearn-color-background);
+  padding-right: 1em;
+  padding-left: 1em;
+}
+
+
+/* Toggleable style: style used for estimator/Pipeline/ColumnTransformer box that is
+clickable and can be expanded/collapsed.
+- Pipeline and ColumnTransformer use this feature and define the default style
+- Estimators will overwrite some part of the style using the `sk-estimator` class
+*/
+
+/* Pipeline and ColumnTransformer style (default) */
+
+#sk-container-id-1 div.sk-toggleable {
+  /* Default theme specific background. It is overwritten whether we have a
+  specific estimator or a Pipeline/ColumnTransformer */
+  background-color: var(--sklearn-color-background);
+}
+
+/* Toggleable label */
+#sk-container-id-1 label.sk-toggleable__label {
+  cursor: pointer;
+  display: flex;
+  width: 100%;
+  margin-bottom: 0;
+  padding: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+}
+
+#sk-container-id-1 label.sk-toggleable__label .caption {
+  font-size: 0.6rem;
+  font-weight: lighter;
+  color: var(--sklearn-color-text-muted);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:before {
+  /* Arrow on the left of the label */
+  content: "▸";
+  float: left;
+  margin-right: 0.25em;
+  color: var(--sklearn-color-icon);
+}
+
+#sk-container-id-1 label.sk-toggleable__label-arrow:hover:before {
+  color: var(--sklearn-color-text);
+}
+
+/* Toggleable content - dropdown */
+
+#sk-container-id-1 div.sk-toggleable__content {
+  display: none;
+  text-align: left;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content pre {
+  margin: 0.2em;
+  border-radius: 0.25em;
+  color: var(--sklearn-color-text);
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-toggleable__content.fitted pre {
+  /* unfitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~div.sk-toggleable__content {
+  /* Expand drop-down */
+  display: block;
+  width: 100%;
+  overflow: visible;
+}
+
+#sk-container-id-1 input.sk-toggleable__control:checked~label.sk-toggleable__label-arrow:before {
+  content: "▾";
+}
+
+/* Pipeline/ColumnTransformer-specific style */
+
+#sk-container-id-1 div.sk-label input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator-specific style */
+
+/* Colorize estimator box */
+#sk-container-id-1 div.sk-estimator input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted input.sk-toggleable__control:checked~label.sk-toggleable__label {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+#sk-container-id-1 div.sk-label label.sk-toggleable__label,
+#sk-container-id-1 div.sk-label label {
+  /* The background is the default theme color */
+  color: var(--sklearn-color-text-on-default-background);
+}
+
+/* On hover, darken the color of the background */
+#sk-container-id-1 div.sk-label:hover label.sk-toggleable__label {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+/* Label box, darken color on hover, fitted */
+#sk-container-id-1 div.sk-label.fitted:hover label.sk-toggleable__label.fitted {
+  color: var(--sklearn-color-text);
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Estimator label */
+
+#sk-container-id-1 div.sk-label label {
+  font-family: monospace;
+  font-weight: bold;
+  line-height: 1.2em;
+}
+
+#sk-container-id-1 div.sk-label-container {
+  text-align: center;
+}
+
+/* Estimator-specific */
+#sk-container-id-1 div.sk-estimator {
+  font-family: monospace;
+  border: 1px dotted var(--sklearn-color-border-box);
+  border-radius: 0.25em;
+  box-sizing: border-box;
+  margin-bottom: 0.5em;
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-0);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+}
+
+/* on hover */
+#sk-container-id-1 div.sk-estimator:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-2);
+}
+
+#sk-container-id-1 div.sk-estimator.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-2);
+}
+
+/* Specification for estimator info (e.g. "i" and "?") */
+
+/* Common style for "i" and "?" */
+
+.sk-estimator-doc-link,
+a:link.sk-estimator-doc-link,
+a:visited.sk-estimator-doc-link {
+  float: right;
+  font-size: smaller;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1em;
+  height: 1em;
+  width: 1em;
+  text-decoration: none !important;
+  margin-left: 0.5em;
+  text-align: center;
+  /* unfitted */
+  border: var(--sklearn-color-unfitted-level-3) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted,
+a:link.sk-estimator-doc-link.fitted,
+a:visited.sk-estimator-doc-link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3) 1pt solid;
+  color: var(--sklearn-color-fitted-level-3);
+}
+
+/* On hover */
+div.sk-estimator:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover,
+div.sk-label-container:hover .sk-estimator-doc-link:hover,
+.sk-estimator-doc-link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-unfitted-level-0);
+  text-decoration: none;
+}
+
+div.sk-estimator.fitted:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover,
+div.sk-label-container:hover .sk-estimator-doc-link.fitted:hover,
+.sk-estimator-doc-link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+  border: var(--sklearn-color-fitted-level-0) 1pt solid;
+  color: var(--sklearn-color-fitted-level-0);
+  text-decoration: none;
+}
+
+/* Span, style for the box shown on hovering the info icon */
+.sk-estimator-doc-link span {
+  display: none;
+  z-index: 9999;
+  position: relative;
+  font-weight: normal;
+  right: .2ex;
+  padding: .5ex;
+  margin: .5ex;
+  width: min-content;
+  min-width: 20ex;
+  max-width: 50ex;
+  color: var(--sklearn-color-text);
+  box-shadow: 2pt 2pt 4pt #999;
+  /* unfitted */
+  background: var(--sklearn-color-unfitted-level-0);
+  border: .5pt solid var(--sklearn-color-unfitted-level-3);
+}
+
+.sk-estimator-doc-link.fitted span {
+  /* fitted */
+  background: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-3);
+}
+
+.sk-estimator-doc-link:hover span {
+  display: block;
+}
+
+/* "?"-specific style due to the `<a>` HTML tag */
+
+#sk-container-id-1 a.estimator_doc_link {
+  float: right;
+  font-size: 1rem;
+  line-height: 1em;
+  font-family: monospace;
+  background-color: var(--sklearn-color-unfitted-level-0);
+  border-radius: 1rem;
+  height: 1rem;
+  width: 1rem;
+  text-decoration: none;
+  /* unfitted */
+  color: var(--sklearn-color-unfitted-level-1);
+  border: var(--sklearn-color-unfitted-level-1) 1pt solid;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-0);
+  border: var(--sklearn-color-fitted-level-1) 1pt solid;
+  color: var(--sklearn-color-fitted-level-1);
+}
+
+/* On hover */
+#sk-container-id-1 a.estimator_doc_link:hover {
+  /* unfitted */
+  background-color: var(--sklearn-color-unfitted-level-3);
+  color: var(--sklearn-color-background);
+  text-decoration: none;
+}
+
+#sk-container-id-1 a.estimator_doc_link.fitted:hover {
+  /* fitted */
+  background-color: var(--sklearn-color-fitted-level-3);
+}
+
+.estimator-table {
+    font-family: monospace;
+}
+
+.estimator-table summary {
+    padding: .5rem;
+    cursor: pointer;
+}
+
+.estimator-table summary::marker {
+    font-size: 0.7rem;
+}
+
+.estimator-table details[open] {
+    padding-left: 0.1rem;
+    padding-right: 0.1rem;
+    padding-bottom: 0.3rem;
+}
+
+.estimator-table .parameters-table {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    margin-top: 0;
+}
+
+.estimator-table .parameters-table tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.estimator-table .parameters-table tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+
+.estimator-table .parameters-table tr:hover {
+    background-color: #e0e0e0;
+}
+
+.estimator-table table td {
+    border: 1px solid rgba(106, 105, 104, 0.232);
+}
+
+/*
+    `table td`is set in notebook with right text-align.
+    We need to overwrite it.
+*/
+.estimator-table table td.param {
+    text-align: left;
+    position: relative;
+    padding: 0;
+}
+
+.user-set td {
+    color:rgb(255, 94, 0);
+    text-align: left !important;
+}
+
+.user-set td.value {
+    color:rgb(255, 94, 0);
+    background-color: transparent;
+}
+
+.default td {
+    color: black;
+    text-align: left !important;
+}
+
+.user-set td i,
+.default td i {
+    color: black;
+}
+
+/*
+    Styles for parameter documentation links
+    We need styling for visited so jupyter doesn't overwrite it
+*/
+a.param-doc-link,
+a.param-doc-link:link,
+a.param-doc-link:visited {
+    text-decoration: underline dashed;
+    text-underline-offset: .3em;
+    color: inherit;
+    display: block;
+    padding: .5em;
+}
+
+/* "hack" to make the entire area of the cell containing the link clickable */
+a.param-doc-link::before {
+    position: absolute;
+    content: "";
+    inset: 0;
+}
+
+.param-doc-description {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    left: 0;
+    padding: .5ex;
+    margin-left: 1.5em;
+    color: var(--sklearn-color-text);
+    box-shadow: .3em .3em .4em #999;
+    width: max-content;
+    text-align: left;
+    max-height: 10em;
+    overflow-y: auto;
+
+    /* unfitted */
+    background: var(--sklearn-color-unfitted-level-0);
+    border: thin solid var(--sklearn-color-unfitted-level-3);
+}
+
+/* Fitted state for parameter tooltips */
+.fitted .param-doc-description {
+    /* fitted */
+    background: var(--sklearn-color-fitted-level-0);
+    border: thin solid var(--sklearn-color-fitted-level-3);
+}
+
+.param-doc-link:hover .param-doc-description {
+    display: block;
+}
+
+.copy-paste-icon {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0NDggNTEyIj48IS0tIUZvbnQgQXdlc29tZSBGcmVlIDYuNy4yIGJ5IEBmb250YXdlc29tZSAtIGh0dHBzOi8vZm9udGF3ZXNvbWUuY29tIExpY2Vuc2UgLSBodHRwczovL2ZvbnRhd2Vzb21lLmNvbS9saWNlbnNlL2ZyZWUgQ29weXJpZ2h0IDIwMjUgRm9udGljb25zLCBJbmMuLS0+PHBhdGggZD0iTTIwOCAwTDMzMi4xIDBjMTIuNyAwIDI0LjkgNS4xIDMzLjkgMTQuMWw2Ny45IDY3LjljOSA5IDE0LjEgMjEuMiAxNC4xIDMzLjlMNDQ4IDMzNmMwIDI2LjUtMjEuNSA0OC00OCA0OGwtMTkyIDBjLTI2LjUgMC00OC0yMS41LTQ4LTQ4bDAtMjg4YzAtMjYuNSAyMS41LTQ4IDQ4LTQ4ek00OCAxMjhsODAgMCAwIDY0LTY0IDAgMCAyNTYgMTkyIDAgMC0zMiA2NCAwIDAgNDhjMCAyNi41LTIxLjUgNDgtNDggNDhMNDggNTEyYy0yNi41IDAtNDgtMjEuNS00OC00OEwwIDE3NmMwLTI2LjUgMjEuNS00OCA0OC00OHoiLz48L3N2Zz4=);
+    background-repeat: no-repeat;
+    background-size: 14px 14px;
+    background-position: 0;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    cursor: pointer;
+}
+</style><div id="sk-container-id-1" class="sk-top-container"><div class="sk-text-repr-fallback"><pre>PCA(n_components=16)</pre><b>In a Jupyter environment, please rerun this cell to show the HTML representation or trust the notebook. <br>On GitHub, the HTML representation is unable to render, please try loading this page with nbviewer.org.</b></div><div class="sk-container" hidden=""><div class="sk-item"><div class="sk-estimator fitted sk-toggleable"><input class="sk-toggleable__control sk-hidden--visually" id="sk-estimator-id-1" type="checkbox" checked=""><label for="sk-estimator-id-1" class="sk-toggleable__label fitted sk-toggleable__label-arrow"><div><div>PCA</div></div><div><a class="sk-estimator-doc-link fitted" rel="noreferrer" target="_blank" href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html">?<span>Documentation for PCA</span></a><span class="sk-estimator-doc-link fitted">i<span>Fitted</span></span></div></label><div class="sk-toggleable__content fitted" data-param-prefix="">
+        <div class="estimator-table">
+            <details>
+                <summary>Parameters</summary>
+                
+<table class="parameters-table caption-top table table-sm table-striped small">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<tbody>
+<tr class="user-set odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=n_components,-int%2C%20float%20or%20%27mle%27%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">n_components <span class="param-doc-description">n_components: int, float or 'mle', default=None<br>
+<br>
+Number of components to keep.<br>
+if n_components is not set all components are kept::<br>
+<br>
+n_components == min(n_samples, n_features)<br>
+<br>
+If ``n_components == 'mle'`` and ``svd_solver == 'full'``, Minka's<br>
+MLE is used to guess the dimension. Use of ``n_components == 'mle'``<br>
+will interpret ``svd_solver == 'auto'`` as ``svd_solver == 'full'``.<br>
+<br>
+If ``0 &lt; n_components &lt; 1`` and ``svd_solver == 'full'``, select the<br>
+number of components such that the amount of variance that needs to be<br>
+explained is greater than the percentage specified by n_components.<br>
+<br>
+If ``svd_solver == 'arpack'``, the number of components must be<br>
+strictly less than the minimum of n_features and n_samples.<br>
+<br>
+Hence, the None case results in::<br>
+<br>
+n_components == min(n_samples, n_features) - 1</span></a></td>
+<td class="value">16</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=copy,-bool%2C%20default%3DTrue" class="param-doc-link" rel="noreferrer" target="_blank">copy <span class="param-doc-description">copy: bool, default=True<br>
+<br>
+If False, data passed to fit are overwritten and running<br>
+fit(X).transform(X) will not yield the expected results,<br>
+use fit_transform(X) instead.</span></a></td>
+<td class="value">True</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=whiten,-bool%2C%20default%3DFalse" class="param-doc-link" rel="noreferrer" target="_blank">whiten <span class="param-doc-description">whiten: bool, default=False<br>
+<br>
+When True (False by default) the `components_` vectors are multiplied<br>
+by the square root of n_samples and then divided by the singular values<br>
+to ensure uncorrelated outputs with unit component-wise variances.<br>
+<br>
+Whitening will remove some information from the transformed signal<br>
+(the relative variance scales of the components) but can sometime<br>
+improve the predictive accuracy of the downstream estimators by<br>
+making their data respect some hard-wired assumptions.</span></a></td>
+<td class="value">False</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=svd_solver,-%7B%27auto%27%2C%20%27full%27%2C%20%27covariance_eigh%27%2C%20%27arpack%27%2C%20%27randomized%27%7D%2C%20%20%20%20%20%20%20%20%20%20%20%20default%3D%27auto%27" class="param-doc-link" rel="noreferrer" target="_blank">svd_solver <span class="param-doc-description">svd_solver: {'auto', 'full', 'covariance_eigh', 'arpack', 'randomized'}, default='auto'<br>
+<br>
+"auto" :<br>
+The solver is selected by a default 'auto' policy is based on `X.shape` and<br>
+`n_components`: if the input data has fewer than 1000 features and<br>
+more than 10 times as many samples, then the "covariance_eigh"<br>
+solver is used. Otherwise, if the input data is larger than 500x500<br>
+and the number of components to extract is lower than 80% of the<br>
+smallest dimension of the data, then the more efficient<br>
+"randomized" method is selected. Otherwise the exact "full" SVD is<br>
+computed and optionally truncated afterwards.<br>
+"full" :<br>
+Run exact full SVD calling the standard LAPACK solver via<br>
+`scipy.linalg.svd` and select the components by postprocessing<br>
+"covariance_eigh" :<br>
+Precompute the covariance matrix (on centered data), run a<br>
+classical eigenvalue decomposition on the covariance matrix<br>
+typically using LAPACK and select the components by postprocessing.<br>
+This solver is very efficient for n_samples &gt;&gt; n_features and small<br>
+n_features. It is, however, not tractable otherwise for large<br>
+n_features (large memory footprint required to materialize the<br>
+covariance matrix). Also note that compared to the "full" solver,<br>
+this solver effectively doubles the condition number and is<br>
+therefore less numerical stable (e.g. on input data with a large<br>
+range of singular values).<br>
+"arpack" :<br>
+Run SVD truncated to `n_components` calling ARPACK solver via<br>
+`scipy.sparse.linalg.svds`. It requires strictly<br>
+`0 &lt; n_components &lt; min(X.shape)`<br>
+"randomized" :<br>
+Run randomized SVD by the method of Halko et al.<br>
+<br>
+.. versionadded:: 0.18.0<br>
+<br>
+.. versionchanged:: 1.5<br>
+Added the 'covariance_eigh' solver.</span></a></td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=tol,-float%2C%20default%3D0.0" class="param-doc-link" rel="noreferrer" target="_blank">tol <span class="param-doc-description">tol: float, default=0.0<br>
+<br>
+Tolerance for singular values computed by svd_solver == 'arpack'.<br>
+Must be of range [0.0, infinity).<br>
+<br>
+.. versionadded:: 0.18.0</span></a></td>
+<td class="value">0.0</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=iterated_power,-int%20or%20%27auto%27%2C%20default%3D%27auto%27" class="param-doc-link" rel="noreferrer" target="_blank">iterated_power <span class="param-doc-description">iterated_power: int or 'auto', default='auto'<br>
+<br>
+Number of iterations for the power method computed by<br>
+svd_solver == 'randomized'.<br>
+Must be of range [0, infinity).<br>
+<br>
+.. versionadded:: 0.18.0</span></a></td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=n_oversamples,-int%2C%20default%3D10" class="param-doc-link" rel="noreferrer" target="_blank">n_oversamples <span class="param-doc-description">n_oversamples: int, default=10<br>
+<br>
+This parameter is only relevant when `svd_solver="randomized"`.<br>
+It corresponds to the additional number of random vectors to sample the<br>
+range of `X` so as to ensure proper conditioning. See<br>
+:func:`~sklearn.utils.extmath.randomized_svd` for more details.<br>
+<br>
+.. versionadded:: 1.1</span></a></td>
+<td class="value">10</td>
+</tr>
+<tr class="default even">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=power_iteration_normalizer,-%7B%27auto%27%2C%20%27QR%27%2C%20%27LU%27%2C%20%27none%27%7D%2C%20default%3D%27auto%27" class="param-doc-link" rel="noreferrer" target="_blank">power_iteration_normalizer <span class="param-doc-description">power_iteration_normalizer: {'auto', 'QR', 'LU', 'none'}, default='auto'<br>
+<br>
+Power iteration normalizer for randomized SVD solver.<br>
+Not used by ARPACK. See :func:`~sklearn.utils.extmath.randomized_svd`<br>
+for more details.<br>
+<br>
+.. versionadded:: 1.1</span></a></td>
+<td class="value">'auto'</td>
+</tr>
+<tr class="default odd">
+<td><em></em></td>
+<td class="param"><a href="https://scikit-learn.org/1.8/modules/generated/sklearn.decomposition.PCA.html#:~:text=random_state,-int%2C%20RandomState%20instance%20or%20None%2C%20default%3DNone" class="param-doc-link" rel="noreferrer" target="_blank">random_state <span class="param-doc-description">random_state: int, RandomState instance or None, default=None<br>
+<br>
+Used when the 'arpack' or 'randomized' solvers are used. Pass an int<br>
+for reproducible results across multiple function calls.<br>
+See :term:`Glossary <random_state>`.<br>
+<br>
+.. versionadded:: 0.18.0</random_state></span></a></td>
+<td class="value">None</td>
+</tr>
+</tbody>
+</table>
+
+            </details>
+        </div>
+    </div></div></div></div></div><script>function copyToClipboard(text, element) {
+    // Get the parameter prefix from the closest toggleable content
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const fullParamName = paramPrefix ? `${paramPrefix}${text}` : text;
+
+    const originalStyle = element.style;
+    const computedStyle = window.getComputedStyle(element);
+    const originalWidth = computedStyle.width;
+    const originalHTML = element.innerHTML.replace('Copied!', '');
+
+    navigator.clipboard.writeText(fullParamName)
+        .then(() => {
+            element.style.width = originalWidth;
+            element.style.color = 'green';
+            element.innerHTML = "Copied!";
+
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        })
+        .catch(err => {
+            console.error('Failed to copy:', err);
+            element.style.color = 'red';
+            element.innerHTML = "Failed!";
+            setTimeout(() => {
+                element.innerHTML = originalHTML;
+                element.style = originalStyle;
+            }, 2000);
+        });
+    return false;
+}
+
+document.querySelectorAll('.copy-paste-icon').forEach(function(element) {
+    const toggleableContent = element.closest('.sk-toggleable__content');
+    const paramPrefix = toggleableContent ? toggleableContent.dataset.paramPrefix : '';
+    const paramName = element.parentElement.nextElementSibling
+        .textContent.trim().split(' ')[0];
+    const fullParamName = paramPrefix ? `${paramPrefix}${paramName}` : paramName;
+
+    element.setAttribute('title', fullParamName);
+});
+
+
+/**
+ * Adapted from Skrub
+ * https://github.com/skrub-data/skrub/blob/403466d1d5d4dc76a7ef569b3f8228db59a31dc3/skrub/_reporting/_data/templates/report.js#L789
+ * @returns "light" or "dark"
+ */
+function detectTheme(element) {
+    const body = document.querySelector('body');
+
+    // Check VSCode theme
+    const themeKindAttr = body.getAttribute('data-vscode-theme-kind');
+    const themeNameAttr = body.getAttribute('data-vscode-theme-name');
+
+    if (themeKindAttr && themeNameAttr) {
+        const themeKind = themeKindAttr.toLowerCase();
+        const themeName = themeNameAttr.toLowerCase();
+
+        if (themeKind.includes("dark") || themeName.includes("dark")) {
+            return "dark";
+        }
+        if (themeKind.includes("light") || themeName.includes("light")) {
+            return "light";
+        }
+    }
+
+    // Check Jupyter theme
+    if (body.getAttribute('data-jp-theme-light') === 'false') {
+        return 'dark';
+    } else if (body.getAttribute('data-jp-theme-light') === 'true') {
+        return 'light';
+    }
+
+    // Guess based on a parent element's color
+    const color = window.getComputedStyle(element.parentNode, null).getPropertyValue('color');
+    const match = color.match(/^rgb\s*\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)\s*$/i);
+    if (match) {
+        const [r, g, b] = [
+            parseFloat(match[1]),
+            parseFloat(match[2]),
+            parseFloat(match[3])
+        ];
+
+        // https://en.wikipedia.org/wiki/HSL_and_HSV#Lightness
+        const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+
+        if (luma > 180) {
+            // If the text is very bright we have a dark theme
+            return 'dark';
+        }
+        if (luma < 75) {
+            // If the text is very dark we have a light theme
+            return 'light';
+        }
+        // Otherwise fall back to the next heuristic.
+    }
+
+    // Fallback to system preference
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+
+function forceTheme(elementId) {
+    const estimatorElement = document.querySelector(`#${elementId}`);
+    if (estimatorElement === null) {
+        console.error(`Element with id ${elementId} not found.`);
+    } else {
+        const theme = detectTheme(estimatorElement);
+        estimatorElement.classList.add(theme);
+    }
+}
+
+forceTheme('sk-container-id-1');</script>
 </div>
-<div id="7c0413b2" class="cell">
+</div>
+<div id="cell-49" class="cell" data-execution_count="33">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>mean <span class="op">=</span> pca.mean_</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>centered_flat <span class="op">=</span> viz_sample.reshape(<span class="dv">100</span>, <span class="dv">3</span> <span class="op">*</span> <span class="dv">64</span> <span class="op">*</span> <span class="dv">64</span>).cpu().numpy() <span class="op">-</span> mean</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>PCS <span class="op">=</span> pca.components_[:latent_dim]</span>
@@ -1177,20 +2048,23 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb44-19"><a href="#cb44-19" aria-hidden="true" tabindex="-1"></a><span class="co">## show the grids</span></span>
 <span id="cb44-20"><a href="#cb44-20" aria-hidden="true" tabindex="-1"></a>show([grid_true, grid_ae, grid_pca], titles <span class="op">=</span> [<span class="st">"Original Images"</span>, <span class="st">"Autoencoder Reconstruction (16 dim)"</span>, <span class="st">"PCA Reconstruction(16 dim)"</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
+<div class="cell-output cell-output-stdout">
 <pre><code>torch.Size([100, 3, 64, 64])</code></pre>
-<div class="quarto-figure quarto-figure-center">
+</div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_49_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-34-output-2.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 </section>
 <section id="c-pca-in-latent-space" class="level4">
 <h4 class="anchored" data-anchor-id="c-pca-in-latent-space">3.C PCA in Latent Space</h4>
-<div id="adbd0562" class="cell">
+<div id="cell-51" class="cell" data-execution_count="34">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a>latent_embeddings <span class="op">=</span> teapot_AE16.encoder(teapots[:<span class="dv">1000</span>].to(device)).squeeze().detach().cpu().numpy()</span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>pca_latent <span class="op">=</span> PCA(n_components<span class="op">=</span>latent_dim)</span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>pca_latent.fit(latent_embeddings)</span>
@@ -1208,20 +2082,21 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb46-15"><a href="#cb46-15" aria-hidden="true" tabindex="-1"></a>fig.update_traces(marker<span class="op">=</span><span class="bu">dict</span>(size<span class="op">=</span><span class="dv">3</span>))  <span class="co"># smaller dots</span></span>
 <span id="cb46-16"><a href="#cb46-16" aria-hidden="true" tabindex="-1"></a>fig.update_layout(scene_camera<span class="op">=</span><span class="bu">dict</span>(eye<span class="op">=</span><span class="bu">dict</span>(x<span class="op">=-</span><span class="fl">1.25</span>, y<span class="op">=-</span><span class="fl">1.25</span>, z<span class="op">=</span><span class="fl">1.25</span>)))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_51_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-35-output-1.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>I don’t know how we could tell if this data lies on a flat manifold in the latent space given our projection into 3d. If it is curved in 4d space, it would of course loose its curvature when projected into 3 dimensions, similar to how a sphere in 3d looks like a disk when projected into 2d.</p>
 </section>
 <section id="d-immersion-test" class="level4">
 <h4 class="anchored" data-anchor-id="d-immersion-test">3.D Immersion Test</h4>
-<div id="6734ac67" class="cell">
+<div id="cell-53" class="cell" data-execution_count="35">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>latents_4 <span class="op">=</span> teapot_AE4.encoder(viz_sample.to(device))</span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>latents_16 <span class="op">=</span> teapot_AE16.encoder(viz_sample.to(device))</span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1234,9 +2109,9 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>rank_16_a <span class="op">=</span> rank_16.cpu().numpy()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
 </div>
-<div id="b36e504a" class="cell">
+<div id="cell-54" class="cell" data-execution_count="36">
 <details class="code-fold">
-<summary>Code</summary>
+<summary>Show Code</summary>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>fig <span class="op">=</span> px.histogram(rank_4_a, title<span class="op">=</span><span class="st">"Histogram of Jacobian Rank for latent_dim = 4"</span>)</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(<span class="bu">range</span><span class="op">=</span>[<span class="dv">0</span>, <span class="dv">5</span>])</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>fig.show()</span>
@@ -1245,18 +2120,20 @@ Number of negative eigenvalues: 221</code></pre>
 <span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>fig.update_xaxes(<span class="bu">range</span><span class="op">=</span>[<span class="dv">10</span>, <span class="dv">20</span>])</span>
 <span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>fig.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </details>
-</div>
-<div class="quarto-figure quarto-figure-center">
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_54_0.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-37-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
+</div>
+<div class="cell-output cell-output-display">
+<div>
 <figure class="figure">
-<p><img src="hw3_files/hw3_54_1.png" class="img-fluid figure-img"></p>
-<figcaption>png</figcaption>
+<p><img src="index_files/figure-html/cell-37-output-2.png" class="img-fluid figure-img"></p>
 </figure>
+</div>
+</div>
 </div>
 <p>Interesting, these histograms indicate that this deocder is not an immersion, since the Jacobian is not full rank. The ranks at all inputs for both decoders are one less than their latent dimension. This might be because of some training issue, but I’m not sure.</p>
 
@@ -1335,6 +2212,57 @@ Number of negative eigenvalues: 221</code></pre>
         container: window.document.getElementById('quarto-embedded-source-code-modal')
       });
       clipboardModal.on('success', onCopySuccess);
+    }
+    const viewSource = window.document.getElementById('quarto-view-source') ||
+                       window.document.getElementById('quarto-code-tools-source');
+    if (viewSource) {
+      const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+      viewSource.addEventListener("click", function(e) {
+        if (sourceUrl) {
+          // rstudio viewer pane
+          if (/\bcapabilities=\b/.test(window.location)) {
+            window.open(sourceUrl);
+          } else {
+            window.location.href = sourceUrl;
+          }
+        } else {
+          const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+          modal.show();
+        }
+        return false;
+      });
+    }
+    function toggleCodeHandler(show) {
+      return function(e) {
+        const cellDetails = window.document.querySelectorAll(".cell details.code-fold");
+        for (let i=0; i<cellDetails.length; i++) {
+          const details = cellDetails[i];
+          if (show) {
+            details.open = true;
+          } else {
+            details.removeAttribute("open");
+          }
+        }
+        const cellCodeDivs = window.document.querySelectorAll(".cell div.sourceCode.cell-code");
+        const fromCls = show ? "hidden" : "unhidden";
+        const toCls = show ? "unhidden" : "hidden";
+        for (let i=0; i<cellCodeDivs.length; i++) {
+          const codeDiv = cellCodeDivs[i];
+          if (codeDiv.classList.contains(fromCls)) {
+            codeDiv.classList.remove(fromCls);
+            codeDiv.classList.add(toCls);
+          } 
+        }
+        return false;
+      }
+    }
+    const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+    if (hideAllCode) {
+      hideAllCode.addEventListener("click", toggleCodeHandler(false));
+    }
+    const showAllCode = window.document.getElementById("quarto-show-all-code");
+    if (showAllCode) {
+      showAllCode.addEventListener("click", toggleCodeHandler(true));
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
